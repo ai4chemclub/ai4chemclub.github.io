@@ -1,0 +1,35 @@
+{
+  "name": "AI for Chemistry Club",
+  "shortName": "AI4Chem Club",
+  "tagline": ["Chemistry", "at heart.", "Curiosity", "without limits."],
+  "description": "A student-run community exploring AI, chemistry and the wider world of science.",
+  "about": "We start with the meeting of AI and chemistry, and follow the questions further: into mathematics, physics and AI itself. Through workshops, shared learning and collaborative practice, we aim to help students build useful skills and explore ideas together.",
+  "contactEmail": "ai4chemclub@ust.hk",
+  "affiliation": {
+    "text": "A student-run Department-associated Group supported by the Department of Chemistry at The Hong Kong University of Science and Technology.",
+    "approvedForPublicUse": false
+  },
+  "focusAreas": [
+    { "title": "AI × Chemistry", "description": "Our starting point: learning how AI can help us ask and investigate chemical questions." },
+    { "title": "AI for Science", "description": "Ideas across mathematics, physics and other sciences, with room to learn from each other." },
+    { "title": "AI & practical tools", "description": "Foundations, methods and everyday skills, from understanding AI to collaborating with Git and GitHub." }
+  ],
+  "activities": [
+    {
+      "title": "Getting started with AI & GitHub",
+      "summary": "An introductory workshop is being planned around AI fundamentals and Git/GitHub. Further details will be shared once confirmed.",
+      "status": "planning",
+      "relationship": "club-organized",
+      "date": null,
+      "location": null,
+      "url": null,
+      "copyApproved": false
+    }
+  ],
+  "people": [],
+  "release": {
+    "copyApproved": false,
+    "languageConfirmed": false,
+    "launchApproved": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ai4chemclub-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "node scripts/check-content.mjs && astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "check": "node scripts/check-content.mjs",
+    "check:release": "node scripts/check-content.mjs --release",
+    "test": "node --test scripts/check-content.test.mjs"
+  },
+  "dependencies": { "astro": "7.3.2" }
+}
