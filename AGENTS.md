@@ -15,7 +15,7 @@
 - Use a lively student-club visual style with clear academic information and readable layout.
 - GitHub Pages is the selected host. Keep Astro output static. No backend, accounts, database, forms, analytics or paid services without a new requirement.
 - The current page is a local concept preview, not an approved public website.
-- English-first copy is a provisional implementation choice, not a confirmed language policy.
+- The user confirmed English-first for the initial website. Public wording remains a draft until reviewed.
 
 ## Privacy and factual accuracy
 

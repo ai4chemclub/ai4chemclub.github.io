@@ -34,8 +34,8 @@ export function validateContent(data, { release = false } = {}) {
     return Number.isFinite(date.valueOf()) && date.toISOString().slice(0, 10) === value;
   };
 
-  if (!object(data, ['name', 'shortName', 'tagline', 'description', 'about', 'contactEmail', 'affiliation', 'focusAreas', 'activities', 'people', 'release'], 'club')) return errors;
-  for (const key of ['name', 'shortName', 'description', 'about']) require(text(data[key]), `${key}: required text`);
+  if (!object(data, ['name', 'shortName', 'tagline', 'description', 'about', 'learningNote', 'contactEmail', 'affiliation', 'focusAreas', 'activities', 'people', 'release'], 'club')) return errors;
+  for (const key of ['name', 'shortName', 'description', 'about', 'learningNote']) require(text(data[key]), `${key}: required text`);
   const headline = list(data.tagline, 'tagline');
   require(headline.length > 0 && headline.every(text), 'tagline: use one or more nonempty lines');
   require(data.contactEmail === 'ai4chemclub@ust.hk', 'contactEmail: use the approved club contact address');
