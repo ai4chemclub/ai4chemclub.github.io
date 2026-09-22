@@ -45,6 +45,7 @@ test('a confirmed external event preserves its identity and validates calendar d
   content.activities[0].date = '2027-02-28';
   content.activities[0].copyApproved = true;
   content.release = { copyApproved: true, languageConfirmed: true, launchApproved: true };
+  content.affiliation.approvedForPublicUse = true;
   assert.deepEqual(validateContent(content, { release: true }), []);
 });
 
@@ -54,4 +55,30 @@ test('malformed content returns errors instead of crashing', () => {
   content.people = null;
   content.activities = [null];
   assert.ok(validateContent(content).length >= 2);
+});
+
+test('university identity can be previewed locally but needs confirmation for release', () => {
+  const content = draft();
+  content.release = { copyApproved: true, languageConfirmed: true, launchApproved: true };
+  content.activities[0].copyApproved = true;
+  content.affiliation.approvedForPublicUse = false;
+  assert.deepEqual(validateContent(content), []);
+  assert.ok(validateContent(content, { release: true }).some(error => error.includes('university name use')));
+  content.affiliation.approvedForPublicUse = true;
+  assert.deepEqual(validateContent(content, { release: true }), []);
+});
+
+test('member portraits accept only local image paths while preserving optional portraits', () => {
+  const content = draft();
+  const person = { name: 'Test Person', role: 'Test role', url: null, approvedForPublicUse: true };
+  content.people = [person];
+  assert.deepEqual(validateContent(content), []);
+  for (const photo of [null, 'images/members/test-person.jpg']) {
+    person.photo = photo;
+    assert.deepEqual(validateContent(content), []);
+  }
+  for (const photo of ['https://example.com/photo.jpg', 'images/members/../private.png', '/private/photo.jpg', 'images/members/photo.svg']) {
+    person.photo = photo;
+    assert.ok(validateContent(content).some(error => error.includes('photo must be a local image')));
+  }
 });

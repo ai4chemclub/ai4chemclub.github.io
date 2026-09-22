@@ -22,7 +22,7 @@
 - Never copy raw emails, chat screenshots, passwords, tokens, private contact details, student IDs, internal account instructions or original attachments into this repository or build output.
 - Store only the minimum public facts needed for the site. Do not quote internal correspondence.
 - A person must have explicitly approved their public details before an entry is added to `src/data/club.json`. Do not store private biographies under a `draft` flag.
-- University name/logo usage must be checked against the registration email's stated approval requirement before publication. No university seal or imitation logo.
+- The user confirmed university name and official logo use on 2026-09-22. Keep the source/proportions of the approved asset in `docs/ASSETS.md`; do not create an imitation logo or replace it with a standalone university seal. Recheck only if the use changes beyond that confirmed scope.
 - Planned activities must remain labelled `planning`; do not invent dates, venues, speakers, registration links, achievements or attendance figures.
 - OSI is an external event. Add a specific entry only after its official identity/link and the club's actual participation have been confirmed.
 - Use the club's public contact email. Do not expose individual email addresses by default.

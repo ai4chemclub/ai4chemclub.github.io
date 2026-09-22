@@ -84,7 +84,7 @@
   .hero-description { max-width: 30rem; font-size: 1.125rem; color: var(--muted); }
   .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem; margin-top: 1.8rem; }
   .section { padding-block: clamp(3rem, 6vw, 5.5rem); border-top: 1px solid var(--line); }
-  .about-section, .activities-section, .people-section {
+  .about-section, .activities-section, .members-section {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
     column-gap: clamp(2rem, 5vw, 4rem);
@@ -92,10 +92,11 @@
   }
   .section-heading .eyebrow { margin-bottom: 1.5rem; }
   .about-copy { align-self: center; font-size: 1.125rem; color: var(--muted); }
-  .affiliation { margin-top: 1.5rem; font-size: 1rem; }
+  .affiliation { margin-top: 1.5rem; padding-left: 1rem; border-left: 3px solid var(--blue); color: var(--ink); font-size: 1rem; }
   .focus-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; grid-column: 1 / -1; }
   .learning-note { grid-column: 1 / -1; }
-  .people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 2rem; }
+  .members-intro { align-self: center; max-width: 32rem; color: var(--muted); font-size: 1.125rem; }
+  .members-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; grid-column: 1 / -1; }
   .section-description { max-width: 25rem; color: var(--muted); margin-top: 1.5rem; }
   .contact-section {
     display: grid;
@@ -117,23 +118,30 @@
     .contact-details { justify-self: start; }
   }
   @media (max-width: 45rem) {
-    .hero, .about-section, .activities-section, .people-section { grid-template-columns: minmax(0, 1fr); }
+    .hero, .about-section, .activities-section, .members-section { grid-template-columns: minmax(0, 1fr); }
     .hero { padding-block: 2.5rem 3rem; }
     .hero h1 { font-size: clamp(2.65rem, 1rem + 7.4vw, 4.8rem); }
     .topic-board { max-width: 34rem; width: 100%; justify-self: center; }
     .focus-grid { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
     .section { row-gap: 2rem; }
+    .members-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 30rem) {
     nav { width: 100%; justify-content: space-between; gap: .25rem .75rem; }
     .hero-actions { gap: .5rem 1rem; }
     .contact-section { margin-bottom: 2rem; }
+    .members-grid { grid-template-columns: minmax(0, 1fr); }
   }
 }
 
 @layer components {
   .skip-link { position: absolute; left: 1rem; top: 1rem; transform: translateY(-200%); background: white; padding: .75rem 1rem; z-index: 2; }
   .skip-link:focus { transform: none; }
+  .site-identity { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2rem; max-width: 100%; }
+  .university-link { display: inline-flex; align-items: center; flex-shrink: 0; min-height: 64px; padding: 1rem 1.25rem; background: var(--ink); }
+  .university-link img { display: block; width: 150px; height: auto; }
+  .club-identity { display: grid; gap: .4rem; max-width: 100%; }
+  .campus-label { font-size: .8125rem; font-weight: 600; color: var(--muted); letter-spacing: .01em; }
   .wordmark { display: inline-flex; align-items: center; gap: .8rem; max-width: 100%; font-size: 1.1875rem; font-weight: 700; text-decoration: none; letter-spacing: -.03em; }
   .wordmark strong { font-weight: 450; }
   .wordmark > span:last-child { min-width: 0; overflow-wrap: anywhere; }
@@ -188,8 +196,18 @@
   .contact-label { font-size: .875rem; font-weight: 600; margin-bottom: .35rem; }
   .contact-email { display: inline-flex; gap: 1rem; align-items: center; max-width: 100%; min-height: 44px; font-size: clamp(1rem, .8rem + .8vw, 1.35rem); font-weight: 600; }
   .contact-email > span:first-child { min-width: 0; overflow-wrap: anywhere; }
-  .person { padding-top: 1.5rem; border-top: 1px solid var(--line); }
-  .person h3 { margin-top: .75rem; }
+  .members-pending { margin-top: 1rem; font-size: .9375rem; }
+  .member-card { min-width: 0; }
+  .member-portrait { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 6 / 5; background: #edf1ff; border: 1px solid var(--line); overflow: hidden; }
+  .member-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+  .member-initials { font-size: clamp(2rem, 5vw, 4rem); font-weight: 650; color: var(--blue); }
+  .member-details { padding-block: 1.25rem; }
+  .member-details h3 { font-size: 1.5rem; line-height: 1.2; }
+  .member-role { color: var(--muted); font-size: .875rem; margin-bottom: .5rem; }
+  .member-placeholder .member-portrait { border-style: dashed; background: linear-gradient(145deg, #edf1ff, var(--paper)); }
+  .member-outline { width: 32%; height: 55%; stroke: #7684ae; stroke-width: 1.5; }
+  .portrait-label { position: absolute; bottom: 1rem; color: var(--muted); font-size: .8125rem; }
+  .member-placeholder .member-details > p { color: var(--muted); margin-top: .5rem; font-size: .9375rem; }
   .footer-name { color: var(--ink); font-weight: 650; margin-bottom: .25rem; }
   .site-footer a { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; }
 

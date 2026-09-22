@@ -10,12 +10,12 @@ export function validateContent(data, { release = false } = {}) {
   const errors = [];
   const require = (condition, message) => { if (!condition) errors.push(message); };
   const text = value => typeof value === 'string' && value.trim().length > 0;
-  const object = (value, keys, label) => {
+  const object = (value, keys, label, optionalKeys = []) => {
     if (!value || typeof value !== 'object' || Array.isArray(value)) {
       errors.push(`${label}: expected an object`);
       return false;
     }
-    for (const key of Object.keys(value)) require(keys.includes(key), `${label}: unexpected field ${key}`);
+    for (const key of Object.keys(value)) require(keys.includes(key) || optionalKeys.includes(key), `${label}: unexpected field ${key}`);
     for (const key of keys) require(Object.hasOwn(value, key), `${label}: missing field ${key}`);
     return true;
   };
@@ -40,9 +40,10 @@ export function validateContent(data, { release = false } = {}) {
   require(headline.length > 0 && headline.every(text), 'tagline: use one or more nonempty lines');
   require(data.contactEmail === 'ai4chemclub@ust.hk', 'contactEmail: use the approved club contact address');
 
-  if (object(data.affiliation, ['text', 'approvedForPublicUse'], 'affiliation')) {
-    require(text(data.affiliation.text), 'affiliation.text: required text');
+  if (object(data.affiliation, ['label', 'text', 'approvedForPublicUse'], 'affiliation')) {
+    require(text(data.affiliation.label) && text(data.affiliation.text), 'affiliation: label and text required');
     require(typeof data.affiliation.approvedForPublicUse === 'boolean', 'affiliation: public-use approval must be boolean');
+    if (release) require(data.affiliation.approvedForPublicUse === true, 'affiliation: confirm university name use before publication');
   }
   const areas = list(data.focusAreas, 'focusAreas');
   require(areas.length > 0, 'focusAreas: at least one area is required');
@@ -52,10 +53,13 @@ export function validateContent(data, { release = false } = {}) {
   });
   list(data.people, 'people').forEach((person, i) => {
     const label = `people[${i}]`;
-    if (!object(person, ['name', 'role', 'url', 'approvedForPublicUse'], label)) return;
+    if (!object(person, ['name', 'role', 'url', 'approvedForPublicUse'], label, ['photo'])) return;
     require(text(person.name) && text(person.role), `${label}: name and role required`);
     require(person.approvedForPublicUse === true, `${label}: remove unapproved personal data from this repository`);
     require(httpsOrNull(person.url), `${label}: public URL must be HTTPS or null`);
+    if (person.photo !== undefined && person.photo !== null) {
+      require(typeof person.photo === 'string' && /^images\/members\/[a-z0-9][a-z0-9_-]*\.(?:png|jpe?g|webp|avif)$/.test(person.photo), `${label}: photo must be a local image under images/members/`);
+    }
   });
   list(data.activities, 'activities').forEach((activity, i) => {
     const label = `activities[${i}]`;
