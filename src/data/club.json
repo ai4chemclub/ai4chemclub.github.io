@@ -2,9 +2,10 @@
   "name": "AI for Chemistry Club",
   "shortName": "AI4Chem Club",
   "tagline": ["Chemistry", "at heart.", "Curiosity", "without limits."],
-  "description": "A student-run community learning, building and exploring at the intersection of AI and chemistry — and across the sciences.",
-  "about": "AI for Chemistry Club brings students together to explore the connections between artificial intelligence and science. Chemistry is our starting point. Our interests also reach into mathematics, physics and AI itself. We aim to build practical skills and a place to exchange ideas through workshops, shared learning and collaborative projects.",
-  "learningNote": "Learning the foundations matters, too. Understanding AI and working with tools such as Git and GitHub gives us a shared starting point for scientific projects.",
+  "description": "A student-led academic community exploring artificial intelligence, chemistry and related fields of AI for Science.",
+  "about": "AI for Chemistry Club brings together students interested in the intersection of artificial intelligence and chemical science. We aim to promote learning, discussion and practical exploration of AI approaches in chemistry, while encouraging connections across mathematics, physics and AI itself. Through interdisciplinary exchange and peer mentoring, we aim to help students learn from one another and use AI tools responsibly in scientific research and learning.",
+  "learningNote": "Learning the foundations matters, too. Understanding AI methods and working with tools such as Git and GitHub can help us build the skills to explore scientific questions together.",
+  "activitiesIntro": "We aim to bring students together through seminars, reading groups, workshops and student sharing sessions, creating opportunities to discuss ideas and explore AI in practice.",
   "contactEmail": "ai4chemclub@ust.hk",
   "affiliation": {
     "text": "A student-run Department-associated Group supported by the Department of Chemistry at The Hong Kong University of Science and Technology.",

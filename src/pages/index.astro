@@ -100,7 +100,7 @@ const topics = ['Chemistry', 'Mathematics', 'Physics', 'AI methods'];
           <div class="section-heading">
             <p class="eyebrow">02 / Activities & updates</p>
             <h2 id="activities-title">Learn something.<br />Try it together.</h2>
-            <p class="section-description">Workshops, shared learning and opportunities to put ideas into practice.</p>
+            <p class="section-description">{club.activitiesIntro}</p>
           </div>
           <div class="activity-list">
             {club.activities.map(activity => (
@@ -160,7 +160,7 @@ const topics = ['Chemistry', 'Mathematics', 'Physics', 'AI methods'];
     </main>
 
     <footer class="site-footer">
-      <div><p class="footer-name">{club.name}</p><p>A student-run community for AI and science.</p></div>
+      <div><p class="footer-name">{club.name}</p><p>A student-led academic community for AI and science.</p></div>
       <a href="#main">Back to top <span aria-hidden="true">↑</span></a>
     </footer>
   </body>
