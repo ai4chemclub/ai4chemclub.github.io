@@ -12,7 +12,7 @@
 
 - Formal introduction is the first-release priority; recruitment is secondary.
 - AI × chemistry is the foundation. Other AI for Science areas, including mathematics and physics, and AI fundamentals/methods/tools are within scope.
-- Use a lively student-club visual style with clear academic information and readable layout.
+- The latest visual direction follows the user's Minimal Academic Homepage reference: a light gray background, white rounded panels, restrained blue links and compact academic typography. Keep the club identity and Members navigation. See `docs/ASSETS.md` for the reference and its rights status; implement locally authored markup/styles rather than copying unlicensed template code or assets.
 - GitHub Pages is the selected host. Keep Astro output static. No backend, accounts, database, forms, analytics or paid services without a new requirement.
 - The current page is a local concept preview, not an approved public website.
 - The user confirmed English-first for the initial website. Public wording remains a draft until reviewed.

@@ -8,8 +8,6 @@ const home = base.endsWith('/') ? base : `${base}/`;
 type Person = { name: string; role: string; url?: string | null; photo?: string | null; approvedForPublicUse: boolean };
 const people = (club.people as Person[]).filter(person => person.approvedForPublicUse);
 const activityStatus = { planning: 'In preparation', upcoming: 'Upcoming', completed: 'Past event' };
-const topics = ['Chemistry', 'Mathematics', 'Physics', 'AI methods'];
-const memberGroups = ['Faculty advisor', 'Committee', 'Club members'];
 const initials = (name: string) => name.trim().split(/\s+/).slice(0, 2).map(part => part[0]).join('');
 ---
 
@@ -19,7 +17,7 @@ const initials = (name: string) => name.trim().split(/\s+/).slice(0, 2).map(part
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={club.description} />
-    <meta name="theme-color" content="#173bef" />
+    <meta name="theme-color" content="#f5f5f7" />
     {!isReady && <meta name="robots" content="noindex, nofollow" />}
     {Astro.site && <link rel="canonical" href={new URL(home, Astro.site)} />}
     <link rel="icon" type="image/svg+xml" href={`${home}favicon.svg`} />
@@ -27,173 +25,108 @@ const initials = (name: string) => name.trim().split(/\s+/).slice(0, 2).map(part
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <div class="site-identity">
-        <a class="university-link" href="https://www.ust.hk/" aria-label="HKUST home">
-          <img src={`${home}branding/hkust-logo.svg`} width="150" height="48" alt="HKUST — The Hong Kong University of Science and Technology" />
-        </a>
-        <div class="club-identity">
-          <a class="wordmark" href={home} aria-label={`${club.shortName} home`}>
-            <span class="wordmark-icon" aria-hidden="true">a<span>i</span></span>
-            <span>AI4Chem <strong>Club</strong></span>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href={home} aria-label={`${club.shortName} home`}>{club.shortName}</a>
+        <nav aria-label="Main navigation">
+          <a href="#about">About</a>
+          {club.activities.length > 0 && <a href="#activities">Activities</a>}
+          <a href="#members">Members</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main id="main" tabindex="-1">
+        <section class="panel introduction" aria-labelledby="club-title">
+          <div class="introduction-copy">
+            <h1 id="club-title">{club.name}</h1>
+            <p class="identity-line">{club.affiliation.label}</p>
+            <p class="tagline">{club.tagline.join(' ')}</p>
+            <p class="description">{club.description}</p>
+            <div class="introduction-links">
+              <a class="pill-link" href={`mailto:${club.contactEmail}`}>Email the club</a>
+              {club.activities.length > 0 && <a class="pill-link" href="#activities">Our activities</a>}
+              <a class="pill-link" href="#members">Meet our members</a>
+            </div>
+          </div>
+          <a class="university-link" href="https://www.ust.hk/" aria-label="HKUST home">
+            <img src={`${home}branding/hkust-logo.svg`} width="150" height="48" alt="HKUST — The Hong Kong University of Science and Technology" />
           </a>
-          <p class="campus-label">{club.affiliation.label}</p>
-        </div>
-      </div>
-      <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        {club.activities.length > 0 && <a href="#activities">Activities</a>}
-        <a href="#members">Members</a>
-        <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
-      </nav>
-    </header>
+        </section>
 
-    <main id="main" tabindex="-1">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-intro">
-          <p class="eyebrow hero-eyebrow">AI for Chemistry Club</p>
-          <h1 id="hero-title" aria-label={club.tagline.join(' ')}>
-            {club.tagline.map((line, index) => (
-              <span class:list={{ 'hero-accent': index >= 2 }}>{line}</span>
-            ))}
-          </h1>
-          <p class="hero-description">{club.description}</p>
-          <div class="hero-actions">
-            <a class="button button-dark" href="#about">Meet the club <span aria-hidden="true">↘</span></a>
-            {club.activities.length > 0 && <a class="text-link" href="#activities">Explore our activities</a>}
-          </div>
-        </div>
-
-        <aside class="topic-board" aria-labelledby="board-title">
-          <div class="board-topline">
-            <p class="eyebrow" id="board-title">Ideas meet here</p>
-            <span class="board-symbol" aria-hidden="true">✳</span>
-          </div>
-          <div class="board-type" aria-hidden="true">
-            <span>AI</span><span class="multiply">×</span><span class="chem">CHEM</span>
-          </div>
-          <div class="board-footer">
-            <p>One starting point.<br /><strong>Many directions.</strong></p>
-            <ul class="topic-tags" aria-label="Fields we explore">
-              {topics.map(topic => <li>{topic}</li>)}
-            </ul>
-          </div>
-        </aside>
-      </section>
-
-      <section id="about" class="section about-section" aria-labelledby="about-title">
-        <div class="section-heading">
-          <p class="eyebrow">01 / About us</p>
-          <h2 id="about-title">Start with chemistry.<br />Keep exploring.</h2>
-        </div>
-        <div class="about-copy">
-          <p>{club.about}</p>
+        <section id="about" class="panel" aria-labelledby="about-title">
+          <h2 id="about-title">About the club</h2>
+          <p class="about-copy">{club.about}</p>
           <p class="affiliation">{club.affiliation.text}</p>
-        </div>
-        <div class="focus-grid">
-          {club.focusAreas.map((area, index) => (
-            <article class="focus-item">
-              <span class="focus-number" aria-hidden="true">0{index + 1}</span>
-              <h3>{area.title}</h3>
-              <p>{area.description}</p>
-            </article>
-          ))}
-        </div>
-        <div class="learning-note">
-          <span class="note-symbol" aria-hidden="true">↳</span>
-          <p>{club.learningNote}</p>
-        </div>
-      </section>
-
-      {club.activities.length > 0 && (
-        <section id="activities" class="section activities-section" aria-labelledby="activities-title">
-          <div class="section-heading">
-            <p class="eyebrow">02 / Activities & updates</p>
-            <h2 id="activities-title">Learn something.<br />Try it together.</h2>
-            <p class="section-description">{club.activitiesIntro}</p>
-          </div>
-          <div class="activity-list">
-            {club.activities.map(activity => (
-              <article class="activity">
-                <div class="activity-meta">
-                  <span class:list={['status', `status-${activity.status}`]}>
-                    {activityStatus[activity.status as keyof typeof activityStatus]}
-                  </span>
-                  {activity.relationship === 'external-participation' && <span>Club participation in an external event</span>}
-                </div>
-                <h3>{activity.title}</h3>
-                <p>{activity.summary}</p>
-                {activity.date && (
-                  <p class="activity-schedule">
-                    <time datetime={activity.date}>{activity.date}</time>
-                    {activity.location && <span>{activity.location}</span>}
-                  </p>
-                )}
-                {activity.url && <a class="text-link" href={activity.url}>Event details <span aria-hidden="true">↗</span></a>}
+          <div class="focus-grid">
+            {club.focusAreas.map(area => (
+              <article class="focus-item">
+                <h3>{area.title}</h3>
+                <p>{area.description}</p>
               </article>
             ))}
           </div>
+          <p class="learning-note">{club.learningNote}</p>
         </section>
-      )}
 
-      <section id="members" class="section members-section" aria-labelledby="members-title">
-          <div class="section-heading">
-            <p class="eyebrow">03 / Members</p>
-            <h2 id="members-title">The people behind<br />our community.</h2>
-          </div>
-          <div class="members-intro">
-            <p>A community of students learning together, with support and guidance from our faculty advisor.</p>
-            {people.length === 0 && <p class="members-pending">Member profiles coming soon.</p>}
-          </div>
+        {club.activities.length > 0 && (
+          <section id="activities" class="panel" aria-labelledby="activities-title">
+            <h2 id="activities-title">Activities &amp; updates</h2>
+            <p class="section-description">{club.activitiesIntro}</p>
+            <div class="activity-list">
+              {club.activities.map(activity => (
+                <article class="activity">
+                  <div class="activity-meta">
+                    <span class:list={['status', `status-${activity.status}`]}>
+                      {activityStatus[activity.status as keyof typeof activityStatus]}
+                    </span>
+                    {activity.relationship === 'external-participation' && <p>Club participation in an external event</p>}
+                    {activity.date && <p><time datetime={activity.date}>{activity.date}</time></p>}
+                    {activity.location && <p>{activity.location}</p>}
+                  </div>
+                  <div class="activity-copy">
+                    <h3>{activity.title}</h3>
+                    <p>{activity.summary}</p>
+                    {activity.url && <a class="text-link" href={activity.url}>Event details <span aria-hidden="true">↗</span></a>}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <section id="members" class="panel" aria-labelledby="members-title">
+          <h2 id="members-title">Members</h2>
+          <p class="section-description">A community of students learning together, with support and guidance from our faculty advisor.</p>
           {people.length > 0 ? <div class="members-grid">
             {people.map(person => (
               <article class="member-card">
                 <div class="member-portrait">
                   {person.photo
-                    ? <img src={`${home}${person.photo}`} alt="" width="480" height="560" loading="lazy" />
+                    ? <img src={`${home}${person.photo}`} alt="" width="160" height="160" loading="lazy" />
                     : <span class="member-initials" aria-hidden="true">{initials(person.name)}</span>}
                 </div>
                 <div class="member-details">
-                  <p class="member-role">{person.role}</p>
                   <h3>{person.name}</h3>
+                  <p class="member-role">{person.role}</p>
                   {person.url && <a class="text-link" href={person.url}>Personal website <span aria-hidden="true">↗</span></a>}
                 </div>
               </article>
             ))}
-          </div> : <div class="members-grid" aria-label="Member directory preview">
-            {memberGroups.map(group => (
-              <article class="member-card member-placeholder">
-                <div class="member-portrait" aria-hidden="true">
-                  <svg class="member-outline" viewBox="0 0 120 140" fill="none">
-                    <circle cx="60" cy="43" r="22" />
-                    <path d="M18 125v-14a42 42 0 0 1 84 0v14" />
-                  </svg>
-                  <span class="portrait-label">Profile to come</span>
-                </div>
-                <div class="member-details"><h3>{group}</h3><p>Details coming soon.</p></div>
-              </article>
-            ))}
-          </div>}
-      </section>
+          </div> : <p class="members-pending">Member profiles coming soon.</p>}
+        </section>
 
-      <section id="contact" class="contact-section" aria-labelledby="contact-title">
-        <div class="contact-intro">
-          <p class="eyebrow">Let's connect</p>
-          <h2 id="contact-title">Bring your curiosity.</h2>
+        <section id="contact" class="panel" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact</h2>
           <p>Have a question about the club or an idea to share? We'd like to hear from you.</p>
-        </div>
-        <div class="contact-details">
-          <p class="contact-label">Email the club</p>
-          <a class="contact-email" href={`mailto:${club.contactEmail}`}>
-            <span>{club.contactEmail}</span><span aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </section>
-    </main>
+          <a class="contact-email text-link" href={`mailto:${club.contactEmail}`}>{club.contactEmail} <span aria-hidden="true">↗</span></a>
+        </section>
+      </main>
 
-    <footer class="site-footer">
-      <div><p class="footer-name">{club.name}</p><p>A student-led academic community for AI and science.</p></div>
-      <a href="#main">Back to top <span aria-hidden="true">↑</span></a>
-    </footer>
+      <footer class="site-footer">
+        <div><p>{club.name}</p><p>A student-led academic community for AI and science.</p></div>
+        <a href="#main">Back to top <span aria-hidden="true">↑</span></a>
+      </footer>
+    </div>
   </body>
 </html>

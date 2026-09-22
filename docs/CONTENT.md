@@ -42,13 +42,13 @@
 公开文案集中在 `src/data/club.json`。JSON 中的文字用双引号，最后一项后面不加逗号。修改后运行 `pnpm check`、`pnpm build` 并查看页面。
 
 - `description`：首页简介及搜索描述。
-- `tagline`：首页标语的逐行文字；后两行使用强调色，长文字仍可自动换行。
+- `tagline`：首页标语的文字片段；当前学术版式将它们用空格连接为一句副标题，按屏幕宽度自然换行。
 - `about`：社团定位和愿景。
 - `learningNote`：解释基础 AI 和开发协作工具如何服务于后续科学项目。
 - `activitiesIntro`：活动方向与形式的简介；宗旨中的活动形式不等于已有确定日程。
 - `focusAreas`：关注方向；每项有 `title` 和 `description`。
 - `activities`：活动动态；数组为空时自动隐藏活动区域及导航。
-- `people`：Members 中的公开成员卡片；导航保持显示，数组为空时显示目录占位说明。
+- `people`：Members 中的公开成员卡片；导航保持显示，数组为空时显示待补充说明。
 - `affiliation.label` / `affiliation.text`：学校归属短句及完整说明；`approvedForPublicUse` 记录确认结果。当前页面直接显示这些文字，发布检查要求该字段为 `true`。
 - `contactEmail`：当前检查允许学校社团邮箱；增加其他渠道时同步调整内容检查规则。
 
@@ -94,7 +94,7 @@
 
 不收集个人密码、私人邮箱、学号、内部名单或未获同意的头像。确认记录用“某项已确认”的简短状态即可，不把聊天截图存进 Git。
 
-`photo` 可省略或为 `null`，此时卡片显示姓名缩写。取得照片及对应公开同意后，将图片放入 `public/images/members/`，填写例如 `images/members/shaokang-li.jpg`。仅允许 PNG、JPG/JPEG、WebP、AVIF 的本地路径；文件名使用小写英文字母、数字、连字符或下划线。上线前检查图片中及元数据内有无私人信息，并目视确认裁切效果。不要把网络头像地址直接填入该字段。
+`photo` 可省略或为 `null`，此时卡片显示姓名缩写。当前学术版式使用紧凑的方形头像，姓名与职务排列在旁边。取得照片及对应公开同意后，将图片放入 `public/images/members/`，填写例如 `images/members/shaokang-li.jpg`。仅允许 PNG、JPG/JPEG、WebP、AVIF 的本地路径；文件名使用小写英文字母、数字、连字符或下划线。上线前检查图片中及元数据内有无私人信息，并目视确认裁切效果。不要把网络头像地址直接填入该字段。
 
 本轮展示职务采用用户确认的 PIC / Vice President / Faculty Adviser；PIC 展开为 Person in Charge。张宗民的职务已由用户确认，不再保留“副 PIC”的未定说法。姓名与职务的同意不自动涵盖未来添加的照片、邮箱或其他资料。
 
