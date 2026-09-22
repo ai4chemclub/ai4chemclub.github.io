@@ -9,6 +9,7 @@
 | AI for Chemistry Club 正式名称 | 注册确认与项目账户名称一致 | 已用于本地预览 |
 | AI4Chem Club 简称 | 讨论采用的展示名称 | 已用于预览 |
 | 化学为基础，覆盖其他科学及 AI 本身 | 用户明确说明 | 已写入关注方向与简介草稿 |
+| 当初制定的 objectives | 用户于 2026-09-22 提供原文，见下节 | 作为简介修订依据；尚未替换当前页面，也不视为视觉、文案或发布确认 |
 | 英文简介、标语 | AI 根据需求起草；尚未定稿 | 可本地讨论，发布前核对 |
 | HKUST 化学系支持的 DAG 身份 | 注册材料支持事实；学校名称使用流程待处理 | `affiliation.approvedForPublicUse: false`，页面暂不显示该句 |
 | 注册生效期 | 2026-09-01 至 2027-08-31 | 留在计划供维护；不自动当作成立日宣传 |
@@ -17,6 +18,24 @@
 | 首场 workshop | 用户说方向为 AI 基础和 Git/GitHub | 标为 `planning`；标题和说明是草稿，日期/地点/链接均为空 |
 | OSI 黑客松 | 聊天中的外部活动线索 | 尚未核实具体活动及组队状态，页面暂不添加 |
 | 活动照片、成员照片、校徽 | 尚无经过确认的公开素材 | 不用虚构照片或大学标志 |
+
+## 社团原定 objectives（2026-09-22 补充）
+
+来源：用户在本次对话中提供的社团原定宗旨。以下仅保留宗旨正文，不包含原始通信、个人信息或附件元数据；不推断它已单独获得学校的网页使用批准。
+
+> The AI for Chemistry Club aims to establish a student-led academic community under the support of the Department of Chemistry for students interested in the intersection of artificial intelligence, chemistry, and related AI for Science fields. The Club will promote learning, discussion, and practical exploration of AI-enabled approaches in chemical science through seminars, reading groups, workshops, and student sharing. It will also encourage interdisciplinary communication, peer mentoring, and responsible use of AI tools in scientific research and learning.
+
+### 与当前页面的对应关系
+
+| 原定宗旨 | 当前页面 | 后续文案建议 |
+| --- | --- | --- |
+| 学生主导的学术社群，化学系支持 | 已写学生运营与科学交流；系支持信息受现有公开状态控制 | About 更明确学术社群定位；系支持措辞仍按已记录流程处理 |
+| AI、化学及相关 AI for Science 交叉 | 已覆盖；数学、物理、AI 本身来自用户此前补充 | 保留化学基础及跨学科范围；不要将“AI 本身”误称为此段原文的明确表述 |
+| seminars、reading groups、workshops、student sharing | 已写 workshops、shared learning，未逐项体现其余形式 | 在宗旨或活动方向中补齐；不据此生成已确定的具体活动、日期或成果 |
+| interdisciplinary communication、peer mentoring | 跨学科交流已有，peer mentoring 尚未明确 | 补充同伴互助与经验分享的目标，不宣称导师配对制度已经运行 |
+| responsible use of AI tools in scientific research and learning | 当前介绍未明确体现 | 将负责任使用 AI 写为社团倡导的原则，不扩写成未经制定的制度或认证 |
+
+这段原定宗旨作为后续 About / Objectives 文案的主要依据，结合用户此前对 AI 基础、Git/GitHub 和更广泛学科兴趣的补充。首页可保留简短介绍，正文承载完整目标。当前只记录来源与修订方向；用户正在向师兄征求视觉及英文介绍意见，收到反馈后再改页面。
 
 ## 修改内容
 
