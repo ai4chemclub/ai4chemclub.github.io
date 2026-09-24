@@ -5,7 +5,7 @@
 - 当前设计与文案已暂时定稿，2026-09-24 完成本地验收。同日用户在网页完成创建，[ai4chemclub 组织](https://github.com/ai4chemclub) 已核对存在，方案为 GitHub Free。
 - tigerdyger 已是 active Owner；组织联系邮箱已核对为用户指定的社团 Gmail。成员分别使用个人 GitHub 账号管理组织。已向 NagatoBigSeven 发送 Owner 邀请，页面与 API 均已核对，等待对方接受。对方可登录自己的 GitHub 账号后访问组织主页接受邀请。
 - 公开仓库为 [ai4chemclub/ai4chemclub.github.io](https://github.com/ai4chemclub/ai4chemclub.github.io)，本地 origin 指向该仓库。用户已同意继续首次上线，实际部署进度见 PLAN。
-- 正式网址为 `https://ai4chemclub.github.io/`。Pages 构建来源已配置为 GitHub Actions，并启用 HTTPS；这只是配置结果，首次上线验收另行记录。
+- 正式网址为 [https://ai4chemclub.github.io/](https://ai4chemclub.github.io/)。2026-09-24 已上线，首次发布提交为 `3bdccf9`；[自动检查](https://github.com/ai4chemclub/ai4chemclub.github.io/actions/runs/36002806068) 与 [Pages 发布](https://github.com/ai4chemclub/ai4chemclub.github.io/actions/runs/36002806067) 均成功，HTTPS、资源及桌面/手机页面已核对。
 - 使用 Node.js 24、pnpm 11.19.0、Astro 7.3.2，依赖锁定于 `pnpm-lock.yaml`。
 
 ## 本机运行方法
@@ -98,6 +98,33 @@ Astro 只在开发和构建时运行；输出是静态文件，适配 GitHub Pag
 
 ## 日常更新与交接
 
+### 新维护者从这里开始
+
+1. 用本人 GitHub 账号接受组织邀请；Owner 身份以组织 People 页的实际状态为准。
+2. 安装 Node.js 24、pnpm 11.19.0，克隆仓库：
+
+   ```sh
+   git clone https://github.com/ai4chemclub/ai4chemclub.github.io.git
+   cd ai4chemclub.github.io
+   pnpm install --frozen-lockfile
+   pnpm dev
+   ```
+
+3. 文案、活动和成员资料只需从 `src/data/club.json` 入手；编辑规则见 CONTENT。创建修改前先同步远程并使用个人 GitHub noreply 提交邮箱。
+4. 修改后运行 `pnpm check`、`pnpm test`，再按正式网址检查发布产物：
+
+   ```sh
+   SITE_URL=https://ai4chemclub.github.io BASE_PATH=/ pnpm check:release
+   SITE_URL=https://ai4chemclub.github.io BASE_PATH=/ pnpm build
+   pnpm preview
+   ```
+
+5. 获准的改动合入 `main` 后自动发布。先在 [Actions](https://github.com/ai4chemclub/ai4chemclub.github.io/actions) 确认 Check website 与 Publish GitHub Pages 均成功，再打开网站复查。失败时查看失败步骤日志；不要将失败视为已更新，也不要关闭发布检查来绕过问题。
+
+邀请接受和维护者亲自完成首次内容更新仍待进行；以上是接手方法，不代表已完成交接培训或更新演练。
+
+### 每次更新
+
 1. 开始前读 `PLAN.md`，确认当前任务和公开边界。
 2. 修改对应内容文件；重要的日期/人物/外部活动先核实。
 3. 执行检查和本地预览。
@@ -110,10 +137,11 @@ DAG 与学校邮箱当前有效期到 2027-08-31，需由社团负责人安排�
 
 社团邮箱收件安排已由用户于 2026-09-23 确认：能正常收信，由 PIC 查看和回复。网站只展示社团邮箱；维护交接时同步确认收件责任。
 
-## 官方参考（2026-09-15 核对）
+## 官方参考（首次发布相关条目于 2026-09-24 复核）
 
 - [GitHub Pages 类型与域名](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 - [GitHub 组织与个人账号](https://docs.github.com/en/get-started/learning-about-github/types-of-github-accounts)
 - [创建组织](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch)
 - [仓库转移与 Pages 地址](https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository)
 - [Astro 部署到 GitHub Pages](https://docs.astro.build/en/guides/deploy/github/)
+- [GitHub Pages REST 配置接口](https://docs.github.com/en/rest/pages/pages)

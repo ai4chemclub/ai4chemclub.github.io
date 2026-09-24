@@ -1,6 +1,6 @@
 # AI for Chemistry Club · Website
 
-AI for Chemistry Club 的网站仓库。设计与文案已定稿，正在完成首次 GitHub Pages 发布；实际部署结果见 [工作计划](docs/PLAN.md)。
+AI for Chemistry Club 的网站仓库。**2026-09-24 已完成首次 GitHub Pages 发布及线上验收。** 后续工作见 [工作计划](docs/PLAN.md)。
 
 - 网站地址：https://ai4chemclub.github.io/
 - 源码仓库：https://github.com/ai4chemclub/ai4chemclub.github.io

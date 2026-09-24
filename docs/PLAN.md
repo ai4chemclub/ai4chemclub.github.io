@@ -2,13 +2,13 @@
 
 **这是项目进度的唯一主清单。每次开始先读这里，每次完成后更新这里。**
 
-更新：2026-09-24 · 当前阶段：**用户同意继续网站仓库与首次上线。公开仓库 ai4chemclub/ai4chemclub.github.io 已创建；Pages 已选择 GitHub Actions，正在完成首次推送与部署。NagatoBigSeven 的 Owner 邀请仍待接受。**
+更新：2026-09-24 · 当前阶段：**网站已在 https://ai4chemclub.github.io/ 上线。公开仓库、自动检查、Pages 发布及桌面/手机线上验收均已完成。NagatoBigSeven 的 Owner 邀请仍待接受；后续重点为维护交接与真实内容更新。**
 
 ## 接下来按这个顺序做
 
-1. 完成已创建组织仓库的首次推送，核对 GitHub Actions 检查与 Pages 发布结果。SITE_URL 为 https://ai4chemclub.github.io，BASE_PATH 为 /。
-2. 等待 NagatoBigSeven 接受已发送的 Owner 邀请，交接时核对成员状态。
-3. 验收真实网址的 HTTPS、资源、手机显示和导航，随后完成维护者交接与一次更新演练。可选成员照片、主页与 OSI 后续再补，不阻塞首版。
+1. 等待 NagatoBigSeven 接受已发送的 Owner 邀请，核对 active Owner 身份；按 OPERATIONS 的“新维护者从这里开始”完成接手。
+2. 有新的、已确认可公开的活动或成员资料时，完成一次内容更新→检查→发布→线上复查的实际演练。不为演练虚构活动或改动已认可文案。
+3. 由负责人安排 DAG / 学校邮箱年度续期（本期至 2027-08-31）。可选成员照片、主页与 OSI 信息按真实进展补充；没有创建自动提醒。
 
 ## 进度与完成条件
 
@@ -22,7 +22,7 @@
 | P0-04 | 验证本地构建和基础预览 | 完成 | 内容检查、6 项测试、构建通过；桌面/手机基础检查见日志 |
 | P0-05 | GitHub 组织安排 | 完成 | ai4chemclub 已存在，GitHub Free；tigerdyger 为 active Owner，指定联系邮箱已核对 |
 | P0-06 | 远程仓库归属 | 完成 | 已创建公开仓库 ai4chemclub/ai4chemclub.github.io，核对当前账号 ADMIN 权限；origin 指向已验证仓库 |
-| P0-07 | 配置自动检查和发布草案 | 完成 | YAML 可解析，Action 引用已核对并锁定；发布未启用；线上运行仍未验证 |
+| P0-07 | 配置自动检查和发布流程 | 完成 | Action 引用已锁定；检查与 Pages 发布已启用，首次真实 GitHub Actions 运行成功 |
 | P1-01 | 讨论首屏与整体视觉 | 完成 | 用户确认老师和同学对当前主体较满意，要求保持主体；仅资产细节可继续优化 |
 | P1-02 | 确认首版语言及简介 | 完成 | 2026-09-23 用户确认当前版本暂时定稿；整页英文与中文核对要点保存在 REVIEW.md |
 | P1-03 | 完善响应式首页 | 完成 | 桌面/手机、键盘导航、200% 原生 Chrome 缩放与减少动态媒体偏好模拟通过；不是完整屏幕阅读器或跨浏览器无障碍审计，具体范围见日志 |
@@ -33,8 +33,8 @@
 | P2-04 | 核对 OSI 活动 | 待做 | 正式名称、官网、实际组队状态核实后才添加；不阻塞首版 |
 | P2-05 | 确认联系渠道 | 完成 | 2026-09-23 用户确认社团邮箱能正常收信，由本人查看和回复；没有发送测试邮件 |
 | P3-01 | 定稿与发布前本地验收 | 完成 | 整页文案暂时定稿；本地显示与键盘/缩放/动效检查、静态产物、资源/锚点、文件范围与历史元数据核对完成；公开授权和实际发布检查归入 P3-02 |
-| P3-02 | 推送并启用 GitHub Pages | 进行中 | 仓库与首次发布安排已确定，真实 SITE_URL 下发布检查通过；待推送审阅范围并核对 Actions / Pages 成功 |
-| P3-03 | 线上验收 | 待做 | HTTPS、主页、资源、手机显示、导航和邮箱链接现场验证 |
+| P3-02 | 推送并启用 GitHub Pages | 完成 | 发布提交 3bdccf9 已推送；Check website 与 Publish GitHub Pages 均成功，站点实际可访问 |
+| P3-03 | 线上验收 | 完成 | HTTPS 返回 200；HTML 与 6 个去重资源和本地产物一致；1512px 桌面、390px 手机、Members / 返回顶部和邮箱目标通过，范围见日志 |
 | P4-01 | 维护者与交接 | 等待外部步骤 | 已向 NagatoBigSeven 发送 Owner 邀请，页面与 API 确认待接受；接受后核对 active Owner 状态并完成维护交接 |
 | P4-02 | 更新演练 | 待做 | 完成一次活动内容修改→检查→发布，并记录维护方法 |
 | P4-03 | 年度续期管理 | 待做 | 负责人将 DAG / 学校邮箱续期纳入社团管理；本期至 2027-08-31 |
@@ -44,8 +44,8 @@
 - 2026-09-24 用户明确授权现在创建组织，覆盖之前的延后安排；指定社团 Gmail 为组织联系邮箱，并确认邀请 nagatobigseven 为 Owner。
 - 用户随后自行完成网页上的创建步骤；[ai4chemclub](https://github.com/ai4chemclub) 已建立，API 核对 GitHub Free、tigerdyger 的 active admin（Owner）身份及指定联系邮箱一致。
 - 用户完成 Confirm access 后，已向 NagatoBigSeven（Zongmin Zhang）发送 Owner 邀请；页面显示发送成功，API 返回 role: admin、state: pending。当前等待对方接受，不能视为已加入组织。
-- 用户随后同意继续网站仓库与首次上线；已创建公开仓库 [ai4chemclub/ai4chemclub.github.io](https://github.com/ai4chemclub/ai4chemclub.github.io)，本地 origin 已配置。Pages API 返回 https://ai4chemclub.github.io/、build_type: workflow、https_enforced: true，首次部署待完成。
-- 本地网站可以直接上传到未来的组织仓库；如果将来确实先有个人远程仓库，也可以再转移。
+- 用户随后同意继续网站仓库与首次上线；已创建公开仓库 [ai4chemclub/ai4chemclub.github.io](https://github.com/ai4chemclub/ai4chemclub.github.io)，本地 origin 已配置并推送。Pages 已部署，正式网址为 https://ai4chemclub.github.io/，构建来源为 workflow，HTTPS 已启用。
+- 网站已直接归属社团组织；本地 main 跟踪 origin/main，无需进行个人仓库转移。
 
 ## 首次发布验收清单
 
@@ -58,7 +58,7 @@
 - [x] `pnpm check`、`pnpm test`（8/8）、`pnpm build` 通过。
 - [x] 首次公开发布获授权，真实 SITE_URL 下 `pnpm check:release` 通过（2026-09-24）。
 - [x] 当前 Git 暂存范围、历史对象与提交元数据已核对；以后新增文件需重新核对。
-- [ ] 正确仓库、正确 Pages 设置，线上运行完成并验证。
+- [x] 正确仓库、正确 Pages 设置，线上运行完成并验证（2026-09-24）。
 
 ## 工作日志
 
@@ -271,3 +271,12 @@
 - Node 24.19.0 / pnpm 11.19.0 下，pnpm check、pnpm test（8/8）、真实网址环境中的 pnpm check:release 与 pnpm build 全部通过。产物 canonical 指向正式网址，noindex 按已确认发布状态移除；7 个本地资源存在，无失效锚点、重复 ID 或浏览器脚本。
 - 复查当前受版本管理文件及此前 8 个提交中的 80 个历史文件对象：凭据模式与原始邮件头模式未匹配；作者与提交者邮箱均为 GitHub noreply。新启用的 workflow 已人工检查，原始附件仍被忽略。该检查有明确范围，不是通用隐私保证。
 - 本条记录时准备首次推送，尚不能称为网站已上线；后续以实际 Actions、Pages 和公网验收结果补记。
+
+### 2026-09-24 · 首次上线与公网验收完成
+
+- 发布提交 `3bdccf9` 已推送到组织仓库 main；[Check website](https://github.com/ai4chemclub/ai4chemclub.github.io/actions/runs/36002806068) 与 [Publish GitHub Pages](https://github.com/ai4chemclub/ai4chemclub.github.io/actions/runs/36002806067) 均成功。后者的 build 与 deploy 都完成，实际运行了安装、8 项测试、发布检查、静态构建和上传部署。
+- HTTPS 正式网址返回 200。首页 HTML 与本地正式构建逐字节相同；6 个去重资源（CSS、favicon、HKUST 标识、3 份许可文件）均返回 200、类型正确且内容一致。本地的 7 个引用包含重复引用，因此与去重资源数量不同。记录保存在被忽略的 `.local/review/live-2026-09-24.json`。
+- Chrome 实际打开正式网址，1512px 桌面与 390px 手机均无文档横向溢出；手机所查标题、正文、链接和卡片也无越界。目视检查首屏、Members 与 Contact，大学标识加载成功；Members 和返回顶部跳转正确，邮箱目标为 mailto:ai4chemclub@ust.hk。浏览器日志无已记录的错误或警告，测试结束恢复正常视口并保留正式页面。
+- 验证范围为当前网络和 Chrome 的桌面/手机视口模拟；没有据此声称所有网络地区、手机真机或所有浏览器均已验证。此次没有重新修改布局或活动内容。
+- 已更新 README、文案审阅状态、工作计划和维护手册，补充克隆、内容修改、发布检查及 Actions 复查步骤。P3-02 / P3-03 完成；邀请接受、维护者实际接手、下次真实内容更新演练和年度续期管理继续保留待办。
+- 收尾提交仅包含这些文档，使用 `[skip ci]` 避免重复构建未变化的网站；部署内容仍为上述已验收的发布提交。文档差异检查通过后同步到 main。
