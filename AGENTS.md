@@ -14,8 +14,8 @@
 - AI × chemistry is the foundation. Other AI for Science areas, including mathematics, physics and biology, and AI fundamentals/methods/tools are within scope.
 - The latest 2026-09-23 feedback provisionally accepts the current design and copy after the FLEX / Materia Viva adaptation and asset polish. Preserve the accepted main layout, typography, palette, content and science composition while completing remaining checks and launch preparation. Keep HKUST blue, wine red, gold, club identity and Members navigation. Preserve upstream notices for adapted styles and icons; never import project datasets or unrelated private material. See `docs/BRIEF.md`, `docs/ASSETS.md` and `docs/PLAN.md` for sources and review status.
 - GitHub Pages is the selected host. Keep Astro output static. No backend, accounts, database, forms, analytics or paid services without a new requirement.
-- The current page is a local concept preview, not an approved public website.
-- The user confirmed English-first and provisionally approved the current copy, including the workshop planning text, on 2026-09-23. Treat it as the current baseline; launch approval remains pending.
+- The user authorized continuing with the organization website repository and first publication on 2026-09-24. Read PLAN for the actual deployment status; an attempted deployment is not a live site.
+- The user confirmed English-first and approved the current copy, including the workshop planning text. Preserve this first-release baseline; do not invent new public facts.
 
 ## Privacy and factual accuracy
 
@@ -39,10 +39,10 @@
 
 ## Git and publication
 
-- The latest user instruction postpones GitHub organization creation; the teacher may create it. Continue locally. Do not create a personal-account fallback repository or an organization just to unblock development.
-- The current authorization covers local preparation and provisional content sign-off. Public launch requires separate authorization.
+- The `ai4chemclub` GitHub organization exists as of 2026-09-24, with `tigerdyger` as an active Owner and the user-specified club Gmail as its contact email. The user explicitly requested inviting `nagatobigseven` as an Owner; read PLAN for the actual invitation status. Reuse this organization; do not create a duplicate or a shared personal-account fallback.
+- The current authorization includes first publication of the reviewed club website to the public `ai4chemclub/ai4chemclub.github.io` repository and GitHub Pages at `https://ai4chemclub.github.io/`. Routine release fixes and verification are included; unrelated material or services are outside this scope.
 - Never accept organization agreements on the user's behalf without the action-time confirmation required by the browser tool.
 - Do not send invitations or messages to other people without an explicit instruction identifying the recipient/action.
-- Keep the Pages workflow disabled until release readiness is recorded and publication is authorized. Do not bypass `check:release` to publish a draft.
+- The Pages workflow is enabled for the approved first release. Keep `check:release` as a required deployment step and record actual checks in PLAN; never bypass it to publish a draft.
 - Use explicit file paths when staging. Preserve the local Git noreply author email.
 - Do not push, change repository visibility or publish beyond the user's authorized scope.

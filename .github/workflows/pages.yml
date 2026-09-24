@@ -1,5 +1,4 @@
-# This file is a draft, NOT an active GitHub Actions workflow.
-# Follow docs/OPERATIONS.md before renaming it to pages.yml.
+# Publish the approved static site; repository variables are documented in docs/OPERATIONS.md.
 name: Publish GitHub Pages
 
 on:

@@ -2,9 +2,10 @@
 
 ## 当前状态
 
-- 当前设计与文案已暂时定稿，2026-09-24 完成本地验收；组织、远程仓库和公开发布仍待安排。
-- 用户与老师可以在接近上线时决定由谁创建 GitHub Organization。
-- 候选名称 `ai4chemclub` 未保留，最终名称以实际创建结果为准。
+- 当前设计与文案已暂时定稿，2026-09-24 完成本地验收。同日用户在网页完成创建，[ai4chemclub 组织](https://github.com/ai4chemclub) 已核对存在，方案为 GitHub Free。
+- tigerdyger 已是 active Owner；组织联系邮箱已核对为用户指定的社团 Gmail。成员分别使用个人 GitHub 账号管理组织。已向 NagatoBigSeven 发送 Owner 邀请，页面与 API 均已核对，等待对方接受。对方可登录自己的 GitHub 账号后访问组织主页接受邀请。
+- 公开仓库为 [ai4chemclub/ai4chemclub.github.io](https://github.com/ai4chemclub/ai4chemclub.github.io)，本地 origin 指向该仓库。用户已同意继续首次上线，实际部署进度见 PLAN。
+- 正式网址为 `https://ai4chemclub.github.io/`。Pages 构建来源已配置为 GitHub Actions，并启用 HTTPS；这只是配置结果，首次上线验收另行记录。
 - 使用 Node.js 24、pnpm 11.19.0、Astro 7.3.2，依赖锁定于 `pnpm-lock.yaml`。
 
 ## 本机运行方法
@@ -41,7 +42,7 @@ pnpm preview
 - `build`：先检查内容，再产出静态 HTML/CSS 到 `dist/`。
 - `preview`：检查真正构建出来的网页，而非仅开发模式。
 - 临时使用其他端口时运行 `pnpm preview --port 4323`。package.json 已含 `--host 127.0.0.1`，不要重复传 `--host`；本次发现重复参数会使监听变成所有网卡，已停止错误启动的服务并验证正确命令仅监听 `127.0.0.1`。可用 `lsof -nP -iTCP:4323 -sTCP:LISTEN` 核对本机监听地址。
-- `check:release`：发布前确认检查。目前文案已确认，仍因缺少首次公开发布授权及真实 SITE_URL 而**应当失败**。
+- `check:release`：发布前确认检查；本版语言、文案和首次发布均已确认。在 `SITE_URL=https://ai4chemclub.github.io BASE_PATH=/` 下运行，2026-09-24 已通过。
 
 内容检查不是通用机密扫描器，也不能识别每一句话的事实真伪。公开前仍需人工阅读拟提交文件、生成文件与 Git 历史。
 
@@ -64,9 +65,9 @@ python3 -m http.server 4322 --bind 127.0.0.1 --directory .local/readability-chec
 
 Astro 只在开发和构建时运行；输出是静态文件，适配 GitHub Pages。内容、页面和样式分别放置，减少后续换人维护的负担。暂无登录、后端、数据库、分析脚本或外部字体。精确版本和锁文件保证依赖安装可重复。
 
-## 接近上线时准备 GitHub
+## GitHub 归属与首次配置
 
-1. 用户与老师确认组织的创建者、名称及管理人。
+1. 用户与老师确认组织的创建者、名称及管理人。当前已指定社团组织 ai4chemclub、共同 Owner nagatobigseven；实际创建与邀请结果以 PLAN 日志为准。
 2. 创建 GitHub Free Organization；成员使用各自个人账号。
 3. 在组织内创建 `<组织名>.github.io` 仓库。免费 Pages 使用公开仓库，因此先完成公开内容与历史检查。
 4. 本地仓库设置 `origin` 指向这个**已验证存在的仓库**。本地文件夹不必改名。
@@ -75,7 +76,9 @@ Astro 只在开发和构建时运行；输出是静态文件，适配 GitHub Pag
 
 ## 发布配置
 
-当前 `.github/workflows/check.yml` 是检查定义。`.github/workflows/pages.yml.disabled` 是尚未启用的发布草案，不会被 GitHub 执行。
+`.github/workflows/check.yml` 执行内容检查、测试与构建；`.github/workflows/pages.yml` 已从草案启用，发布前会执行测试和 `check:release`，仅上传 `dist/`。
+
+本仓库使用以下 Repository Actions variables：`SITE_URL=https://ai4chemclub.github.io`、`BASE_PATH=/`、`PAGES_ENABLED=true`。Pages 的构建来源为 GitHub Actions。变量与实际部署状态以 PLAN 中已核对的结果为准。
 
 第一次上线按顺序：
 
@@ -85,7 +88,7 @@ Astro 只在开发和构建时运行；输出是静态文件，适配 GitHub Pag
    - `SITE_URL`：已核实的 HTTPS 源站，例如 `https://<组织名>.github.io`；不带项目子目录。
    - `BASE_PATH`：组织主页为 `/`；如果使用项目页则为 `/<仓库名>/`。
    - `PAGES_ENABLED`：首次上线确认后设为 `true`。
-4. 将 `pages.yml.disabled` 改名为 `pages.yml`；在仓库 Settings → Pages 选择 GitHub Actions。
+4. 首次启用时将发布草案改名为 `pages.yml`；本仓库已经完成。在仓库 Settings → Pages 选择 GitHub Actions。
 5. 在相同 SITE_URL/BASE_PATH 环境下运行 `pnpm check:release` 和 `pnpm build`。
 6. 核对并显式暂存本次文件，提交、推送已授权范围。Pages workflow 只上传 `dist/`，不上传仓库根目录。
 7. 检查 GitHub Actions 的 build 和 deploy 都成功，再访问真实网址验证主页、样式、图标、导航、手机显示和邮件链接。

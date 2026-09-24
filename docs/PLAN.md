@@ -2,12 +2,12 @@
 
 **这是项目进度的唯一主清单。每次开始先读这里，每次完成后更新这里。**
 
-更新：2026-09-24 · 当前阶段：**当前版本暂时定稿，本地验收已完成。200% 原生浏览器缩放、减少动态偏好的浏览器模拟、手机显示、键盘操作及文件范围核对通过。主体设计和文案保持认可基线；下一步等待 GitHub 组织、最终仓库与首次公开发布安排。**
+更新：2026-09-24 · 当前阶段：**用户同意继续网站仓库与首次上线。公开仓库 ai4chemclub/ai4chemclub.github.io 已创建；Pages 已选择 GitHub Actions，正在完成首次推送与部署。NagatoBigSeven 的 Owner 邀请仍待接受。**
 
 ## 接下来按这个顺序做
 
-1. 用户与老师确定 GitHub 组织及最终仓库，提供组织或仓库链接；仍未创建时保持本地，不另建个人远程仓库。
-2. 核实真实 SITE_URL 与 BASE_PATH，取得首次公开发布授权；按 OPERATIONS 配置并启用 Pages，运行发布检查和构建后推送。
+1. 完成已创建组织仓库的首次推送，核对 GitHub Actions 检查与 Pages 发布结果。SITE_URL 为 https://ai4chemclub.github.io，BASE_PATH 为 /。
+2. 等待 NagatoBigSeven 接受已发送的 Owner 邀请，交接时核对成员状态。
 3. 验收真实网址的 HTTPS、资源、手机显示和导航，随后完成维护者交接与一次更新演练。可选成员照片、主页与 OSI 后续再补，不阻塞首版。
 
 ## 进度与完成条件
@@ -18,10 +18,10 @@
 | --- | --- | --- | --- |
 | P0-01 | 梳理需求、隐私边界、信息结构 | 完成 | BRIEF / CONTENT / AGENTS 已建立 |
 | P0-02 | 初始化本地 Git 与项目框架 | 完成 | main 分支、忽略规则、精确依赖与锁文件、静态站点文件齐全 |
-| P0-03 | 建立工作计划和维护手册 | 完成 | 本文及 OPERATIONS 已建立，最新的组织延后决定已记录 |
+| P0-03 | 建立工作计划和维护手册 | 完成 | 本文及 OPERATIONS 已建立，组织创建与 Owner 邀请状态已记录 |
 | P0-04 | 验证本地构建和基础预览 | 完成 | 内容检查、6 项测试、构建通过；桌面/手机基础检查见日志 |
-| P0-05 | GitHub 组织安排 | 延后 | 用户与老师决定创建者；本阶段不创建组织，不阻塞本地开发 |
-| P0-06 | 远程仓库归属 | 延后 | 接近上线时确认 owner/name、可见性与 remote；本阶段不另建个人远程仓库 |
+| P0-05 | GitHub 组织安排 | 完成 | ai4chemclub 已存在，GitHub Free；tigerdyger 为 active Owner，指定联系邮箱已核对 |
+| P0-06 | 远程仓库归属 | 完成 | 已创建公开仓库 ai4chemclub/ai4chemclub.github.io，核对当前账号 ADMIN 权限；origin 指向已验证仓库 |
 | P0-07 | 配置自动检查和发布草案 | 完成 | YAML 可解析，Action 引用已核对并锁定；发布未启用；线上运行仍未验证 |
 | P1-01 | 讨论首屏与整体视觉 | 完成 | 用户确认老师和同学对当前主体较满意，要求保持主体；仅资产细节可继续优化 |
 | P1-02 | 确认首版语言及简介 | 完成 | 2026-09-23 用户确认当前版本暂时定稿；整页英文与中文核对要点保存在 REVIEW.md |
@@ -33,17 +33,18 @@
 | P2-04 | 核对 OSI 活动 | 待做 | 正式名称、官网、实际组队状态核实后才添加；不阻塞首版 |
 | P2-05 | 确认联系渠道 | 完成 | 2026-09-23 用户确认社团邮箱能正常收信，由本人查看和回复；没有发送测试邮件 |
 | P3-01 | 定稿与发布前本地验收 | 完成 | 整页文案暂时定稿；本地显示与键盘/缩放/动效检查、静态产物、资源/锚点、文件范围与历史元数据核对完成；公开授权和实际发布检查归入 P3-02 |
-| P3-02 | 推送并启用 GitHub Pages | 等待外部步骤 | 组织及仓库已确定，首次公开发布已授权；真实 SITE_URL 下发布检查通过，只推送审阅范围，Actions / Pages 运行成功 |
+| P3-02 | 推送并启用 GitHub Pages | 进行中 | 仓库与首次发布安排已确定，真实 SITE_URL 下发布检查通过；待推送审阅范围并核对 Actions / Pages 成功 |
 | P3-03 | 线上验收 | 待做 | HTTPS、主页、资源、手机显示、导航和邮箱链接现场验证 |
-| P4-01 | 维护者与交接 | 待做 | 确认第二位维护者及权限；收到明确邀请指令后执行 |
+| P4-01 | 维护者与交接 | 等待外部步骤 | 已向 NagatoBigSeven 发送 Owner 邀请，页面与 API 确认待接受；接受后核对 active Owner 状态并完成维护交接 |
 | P4-02 | 更新演练 | 待做 | 完成一次活动内容修改→检查→发布，并记录维护方法 |
 | P4-03 | 年度续期管理 | 待做 | 负责人将 DAG / 学校邮箱续期纳入社团管理；本期至 2027-08-31 |
 
-## GitHub 安排（按用户最新要求延后）
+## GitHub 安排
 
-- 用户明确表示组织创建不急，老师可能亲自创建。它不再是当前阶段的依赖或阻塞项。
-- 先前仅填写过免费组织表单，未接受协议、未提交；已关闭该页面，没有创建组织或远程仓库。
-- 候选组织名 `ai4chemclub` 尚未注册或保留；正式名称确定后再配置仓库与网址。
+- 2026-09-24 用户明确授权现在创建组织，覆盖之前的延后安排；指定社团 Gmail 为组织联系邮箱，并确认邀请 nagatobigseven 为 Owner。
+- 用户随后自行完成网页上的创建步骤；[ai4chemclub](https://github.com/ai4chemclub) 已建立，API 核对 GitHub Free、tigerdyger 的 active admin（Owner）身份及指定联系邮箱一致。
+- 用户完成 Confirm access 后，已向 NagatoBigSeven（Zongmin Zhang）发送 Owner 邀请；页面显示发送成功，API 返回 role: admin、state: pending。当前等待对方接受，不能视为已加入组织。
+- 用户随后同意继续网站仓库与首次上线；已创建公开仓库 [ai4chemclub/ai4chemclub.github.io](https://github.com/ai4chemclub/ai4chemclub.github.io)，本地 origin 已配置。Pages API 返回 https://ai4chemclub.github.io/、build_type: workflow、https_enforced: true，首次部署待完成。
 - 本地网站可以直接上传到未来的组织仓库；如果将来确实先有个人远程仓库，也可以再转移。
 
 ## 首次发布验收清单
@@ -55,7 +56,7 @@
 - [x] 当前活动保持 planning，没有未核实日期、身份、链接或虚构成果。
 - [x] 桌面、手机、键盘导航与放大阅读检查通过。
 - [x] `pnpm check`、`pnpm test`（8/8）、`pnpm build` 通过。
-- [ ] 首次公开发布获授权，真实 SITE_URL 下 `pnpm check:release` 通过。
+- [x] 首次公开发布获授权，真实 SITE_URL 下 `pnpm check:release` 通过（2026-09-24）。
 - [x] 当前 Git 暂存范围、历史对象与提交元数据已核对；以后新增文件需重新核对。
 - [ ] 正确仓库、正确 Pages 设置，线上运行完成并验证。
 
@@ -240,3 +241,33 @@
 - 生成文件只有首页、CSS、SVG 和许可通知；7 个本地资源引用均存在，无失效锚点或重复 ID，无页面脚本，保留 noindex。官方 HKUST SVG 哈希与 ASSETS 一致。静态结果与浏览器指标记录在被忽略的 `.local/review/*-2026-09-24.json`，不随站点发布。
 - `pnpm check`、`pnpm test`（8/8）、`pnpm build` 通过；`check:release` 仅因 `launchApproved` 未确认和 SITE_URL 未设置而按预期失败。暂存核对发现上游许可文件结尾多一空行，移除该空行后构建与 `git diff --cached --check` 通过，许可正文未改。
 - 本轮保持网页主体、可见文案、CSS 和图形内容不变；更新 README 的当前状态、图标说明和文件入口，将手动复查方法写入 OPERATIONS。已按明确文件路径暂存此前认可的改版、文案及本轮验收文档，准备保存为本地检查点。临时 4323 预览已停止，日常 4321 服务继续仅监听本机；无 remote、push 或公开部署，Pages workflow 保持禁用。
+
+### 2026-09-24 · 获准创建组织，准备最终提交
+
+- 用户授权现在创建社团 GitHub 组织，并指定社团 Gmail 为组织联系邮箱；随后明确师兄账号为 nagatobigseven，角色为 Owner。该指令覆盖之前的组织延后安排，不扩大到推送网站或公开上线。
+- 浏览器与 GitHub CLI 均确认当前登录账号为 tigerdyger。已进入 GitHub Free 组织创建表单，填写 ai4chemclub、AI for Chemistry Club 与指定联系邮箱；邮箱通过页面截图核对，未把组织管理邮箱写入网站公开内容。
+- GitHub 账户验证自行通过，无需操作验证码。表单要求代表社团接受 GitHub Customer Agreement 并确认有权代表社团；按照浏览器工具规则，已发起提交前的现场确认。协议框尚未勾选，组织尚未创建，邀请尚未发送。
+- AGENTS / BRIEF / OPERATIONS 已同步新的授权和真实进度。当前仅文档变化，`git diff --check` 通过；不重复运行站点测试，站点代码与发布状态保持不变。
+
+### 2026-09-24 · 组织创建已确认，邀请等待身份验证
+
+- 用户表示已经确认，恢复浏览器时页面已进入 Welcome to ai4chemclub / Invite your team members，表明用户已自行完成创建。API 核对组织 ai4chemclub 存在、方案 free、公开仓库数量 0；tigerdyger 的组织成员状态为 active、角色 admin（Owner）。组织联系邮箱与用户指定的社团 Gmail 一致。
+- 搜索结果与公开用户资料均确认 NagatoBigSeven 对应 Zongmin Zhang。为按用户要求选择 Owner，从 People → Invite member 进入该账号的邀请编辑流程；GitHub 转到 Confirm access，要求创建者重新验证身份。
+- 已请用户在 GitHub 页面自行完成验证。用户反馈后刷新当前会话仍停在验证页，尚未进入角色选择；没有读取或存储密码。API 核对待处理邀请列表为空，组织成员只有 tigerdyger，因此不能将邀请记为已发送。
+- 已保留浏览器标签供用户完成验证；P0-05 标为完成，P4-01 等待身份验证后继续。没有创建网站仓库、配置 remote、推送文件或启用 Pages，网站内容及构建输入未变。
+
+### 2026-09-24 · Owner 邀请已发送
+
+- 用户再次完成 GitHub 验证后，页面出现 Invite Zongmin Zhang to ai4chemclub 的角色表单。按已授权的范围选择 Owner，核对选中状态后点击 Send invitation。
+- GitHub 显示邀请发送成功；Pending Members 页面列出 NagatoBigSeven、Owner，以及 2026-09-24 的邀请日期。待处理邀请 API 返回 login: NagatoBigSeven、role: admin，确认邀请的账号和权限正确。
+- 当前仍是待接受邀请，未将对方记录为 active Owner。P4-01 等待对方接受并完成后续交接；对方可通过 GitHub 邮件或登录后访问组织主页接受邀请。
+- 更新组织与邀请状态及后续步骤；本轮仅修改项目文档，`git diff --check` 通过，不重复运行站点测试。网站仓库、remote、推送与 Pages 均未操作。
+
+### 2026-09-24 · 创建网站仓库，准备首次发布
+
+- 在说明下一步为组织网站仓库与首次上线后，用户同意继续。沿用已选定的 GitHub Free Pages 方案，创建公开仓库 ai4chemclub/ai4chemclub.github.io；API 核对仓库归属、PUBLIC 可见性、空仓库与当前账号 ADMIN 权限后，设置本地 origin。
+- GitHub Pages 设为 workflow 构建来源，API 返回正式网址 https://ai4chemclub.github.io/ 与 HTTPS 已启用。仓库变量已设置并核对：SITE_URL=https://ai4chemclub.github.io、BASE_PATH=/、PAGES_ENABLED=true。
+- 记录本次发布授权，release.launchApproved 设为 true；将 Pages workflow 从禁用草案启用。网站可见文案、成员、布局、配色、图形及活动 planning 状态均未改动。
+- Node 24.19.0 / pnpm 11.19.0 下，pnpm check、pnpm test（8/8）、真实网址环境中的 pnpm check:release 与 pnpm build 全部通过。产物 canonical 指向正式网址，noindex 按已确认发布状态移除；7 个本地资源存在，无失效锚点、重复 ID 或浏览器脚本。
+- 复查当前受版本管理文件及此前 8 个提交中的 80 个历史文件对象：凭据模式与原始邮件头模式未匹配；作者与提交者邮箱均为 GitHub noreply。新启用的 workflow 已人工检查，原始附件仍被忽略。该检查有明确范围，不是通用隐私保证。
+- 本条记录时准备首次推送，尚不能称为网站已上线；后续以实际 Actions、Pages 和公网验收结果补记。

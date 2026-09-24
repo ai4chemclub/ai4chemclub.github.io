@@ -1,6 +1,9 @@
 # AI for Chemistry Club · Website
 
-社团主页的本地仓库。**设计与文案已暂时定稿，本地验收完成，尚未上线。**
+AI for Chemistry Club 的网站仓库。设计与文案已定稿，正在完成首次 GitHub Pages 发布；实际部署结果见 [工作计划](docs/PLAN.md)。
+
+- 网站地址：https://ai4chemclub.github.io/
+- 源码仓库：https://github.com/ai4chemclub/ai4chemclub.github.io
 
 ## 从哪里继续
 
@@ -45,7 +48,7 @@ public/illustrations/ 科学主题装饰 SVG
 public/licenses/      上游样式与图标的许可通知
 scripts/              内容检查及其测试
 docs/                 工作计划、需求、内容和维护说明
-.github/workflows/    自动检查；发布流程尚未启用
+.github/workflows/    自动检查与 GitHub Pages 发布
 ```
 
 Astro 在本地或 GitHub Actions 上把内容转换为普通 HTML/CSS；GitHub Pages 只需托管生成的 `dist/`。访客不需要登录，站点没有数据库或后台服务。

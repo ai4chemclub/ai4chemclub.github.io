@@ -37,6 +37,6 @@
   "release": {
     "copyApproved": true,
     "languageConfirmed": true,
-    "launchApproved": false
+    "launchApproved": true
   }
 }

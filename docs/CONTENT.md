@@ -35,7 +35,7 @@
 | interdisciplinary communication、peer mentoring | About 已写入跨学科交流与同伴互助 | 表达共同学习的目标，不宣称导师配对制度已经运行 |
 | responsible use of AI tools in scientific research and learning | About 已明确科研和学习中负责任使用 AI 的目标 | 不扩写成未经制定的制度或认证 |
 
-这段原定宗旨是当前简介与活动介绍的主要依据，结合用户此前对 AI 基础、Git/GitHub 和更广泛学科兴趣的补充。首屏保留简短介绍，About 与活动介绍承载具体目标。用户于 2026-09-23 确认当前版本暂时定稿；此处记录文案确认，首次公开发布仍待授权。
+这段原定宗旨是当前简介与活动介绍的主要依据，结合用户此前对 AI 基础、Git/GitHub 和更广泛学科兴趣的补充。首屏保留简短介绍，About 与活动介绍承载具体目标。用户于 2026-09-23 确认当前版本暂时定稿，并于 2026-09-24 同意继续网站仓库与首次上线；实际部署结果见 PLAN。
 
 ## 修改内容
 
@@ -100,7 +100,7 @@
 
 ## 发布状态
 
-`release.languageConfirmed` 为 `true`（英文为主）。用户于 2026-09-23 确认当前版本暂时定稿，因此 `release.copyApproved` 与现有工作坊的 `copyApproved` 设为 `true`；`release.launchApproved` 仍为 `false`。这些字段记录实际确认，不代替确认本身。当前版本可本地构建，发布检查仍要求公开发布授权与真实 SITE_URL。
+`release.languageConfirmed` 为 `true`（英文为主）。用户于 2026-09-23 确认当前版本暂时定稿，因此 `release.copyApproved` 与现有工作坊的 `copyApproved` 为 `true`；2026-09-24 用户同意继续网站仓库与首次上线，`release.launchApproved` 更新为 `true`。这些字段记录实际确认，不代替确认本身。发布检查使用真实 SITE_URL `https://ai4chemclub.github.io`；它通过不等于线上部署已经完成，实际结果见 PLAN。
 
 `noindex` 只减少索引，不提供访问控制。草稿保密依赖本地保存和不公开上传，不能依赖这个标签。
 
