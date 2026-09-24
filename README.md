@@ -1,12 +1,13 @@
 # AI for Chemistry Club · Website
 
-社团主页的准备仓库。**当前是本地概念预览，尚未上线。**
+社团主页的本地仓库。**设计与文案已暂时定稿，本地验收完成，尚未上线。**
 
 ## 从哪里继续
 
 - **[工作计划与当前进度](docs/PLAN.md)**：下一步做什么、完成条件、尚未解决的问题。
 - [需求与设计方向](docs/BRIEF.md)：我们已确认的定位，以及暂定选择。
 - [公开内容清单](docs/CONTENT.md)：哪些能写、哪些还需核实、如何补充活动和成员。
+- [当前文案暂定稿](docs/REVIEW.md)：已确认的英文正文与中文核对要点。
 - [运行、GitHub 与上线手册](docs/OPERATIONS.md)：本地预览、组织/仓库安排、发布与维护。
 - [给后续维护者和 AI 的规则](AGENTS.md)：每次接手先读计划，完成后更新进度。
 
@@ -35,9 +36,13 @@ pnpm preview  # 查看构建后的网页
 ```text
 src/
   data/club.json       社团简介、关注方向、活动、公开成员资料
+  components/Icon.astro  仅打包所需的静态 Lucide 图标
   pages/index.astro    主页结构
   styles/global.css   配色、字体、布局、手机适配
-public/favicon.svg    临时文字图标
+public/favicon.svg    三节点网络网站图标
+public/branding/      官方 HKUST 标识
+public/illustrations/ 科学主题装饰 SVG
+public/licenses/      上游样式与图标的许可通知
 scripts/              内容检查及其测试
 docs/                 工作计划、需求、内容和维护说明
 .github/workflows/    自动检查；发布流程尚未启用

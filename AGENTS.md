@@ -11,11 +11,11 @@
 ## Scope and design
 
 - Formal introduction is the first-release priority; recruitment is secondary.
-- AI × chemistry is the foundation. Other AI for Science areas, including mathematics and physics, and AI fundamentals/methods/tools are within scope.
-- The latest visual direction follows the user's Minimal Academic Homepage reference: a light gray background, white rounded panels, restrained blue links and compact academic typography. Keep the club identity and Members navigation. See `docs/ASSETS.md` for the reference and its rights status; implement locally authored markup/styles rather than copying unlicensed template code or assets.
+- AI × chemistry is the foundation. Other AI for Science areas, including mathematics, physics and biology, and AI fundamentals/methods/tools are within scope.
+- The latest 2026-09-23 feedback provisionally accepts the current design and copy after the FLEX / Materia Viva adaptation and asset polish. Preserve the accepted main layout, typography, palette, content and science composition while completing remaining checks and launch preparation. Keep HKUST blue, wine red, gold, club identity and Members navigation. Preserve upstream notices for adapted styles and icons; never import project datasets or unrelated private material. See `docs/BRIEF.md`, `docs/ASSETS.md` and `docs/PLAN.md` for sources and review status.
 - GitHub Pages is the selected host. Keep Astro output static. No backend, accounts, database, forms, analytics or paid services without a new requirement.
 - The current page is a local concept preview, not an approved public website.
-- The user confirmed English-first for the initial website. Public wording remains a draft until reviewed.
+- The user confirmed English-first and provisionally approved the current copy, including the workshop planning text, on 2026-09-23. Treat it as the current baseline; launch approval remains pending.
 
 ## Privacy and factual accuracy
 
@@ -40,7 +40,7 @@
 ## Git and publication
 
 - The latest user instruction postpones GitHub organization creation; the teacher may create it. Continue locally. Do not create a personal-account fallback repository or an organization just to unblock development.
-- The current authorization covers local preparation. It does not make draft public copy approved for launch.
+- The current authorization covers local preparation and provisional content sign-off. Public launch requires separate authorization.
 - Never accept organization agreements on the user's behalf without the action-time confirmation required by the browser tool.
 - Do not send invitations or messages to other people without an explicit instruction identifying the recipient/action.
 - Keep the Pages workflow disabled until release readiness is recorded and publication is authorized. Do not bypass `check:release` to publish a draft.

@@ -9,6 +9,7 @@ dist/
 .env.*
 !.env.example
 # Keep private source material outside this repository, even during drafting.
+/AI_for_Chemistry_Club_DAG_Objectives.docx
 private/
 attachments/
 raw-materials/

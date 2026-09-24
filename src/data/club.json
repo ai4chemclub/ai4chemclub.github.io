@@ -1,9 +1,9 @@
 {
   "name": "AI for Chemistry Club",
   "shortName": "AI4Chem Club",
-  "tagline": ["Chemistry", "at heart.", "Curiosity", "without limits."],
+  "tagline": ["Stay curious. Explore together."],
   "description": "A student-led academic community at HKUST, exploring artificial intelligence, chemistry and related fields of AI for Science.",
-  "about": "AI for Chemistry Club brings together students interested in the intersection of artificial intelligence and chemical science. We aim to promote learning, discussion and practical exploration of AI approaches in chemistry, while encouraging connections across mathematics, physics and AI itself. Through interdisciplinary exchange and peer mentoring, we aim to help students learn from one another and use AI tools responsibly in scientific research and learning.",
+  "about": "AI for Chemistry Club brings together students interested in the intersection of artificial intelligence and chemical science. We aim to promote learning, discussion and practical exploration of AI approaches in chemistry, while encouraging connections across mathematics, physics, biology and AI itself. Through interdisciplinary exchange and peer mentoring, we aim to help students learn from one another and use AI tools responsibly in scientific research and learning.",
   "learningNote": "Learning the foundations matters, too. Understanding AI methods and working with tools such as Git and GitHub can help us build the skills to explore scientific questions together.",
   "activitiesIntro": "We aim to bring students together through seminars, reading groups, workshops and student sharing sessions, creating opportunities to discuss ideas and explore AI in practice.",
   "contactEmail": "ai4chemclub@ust.hk",
@@ -14,28 +14,28 @@
   },
   "focusAreas": [
     { "title": "AI × Chemistry", "description": "Explore how AI methods can help us understand chemical systems and investigate scientific questions." },
-    { "title": "AI for Science", "description": "Connect ideas from mathematics, physics and other sciences, and learn across disciplines." },
+    { "title": "AI for Science", "description": "Connect ideas from mathematics, physics, biology and other sciences, and learn across disciplines." },
     { "title": "AI foundations & tools", "description": "Understand AI methods and develop practical skills in coding, using AI tools and collaborating with Git and GitHub." }
   ],
   "activities": [
     {
-      "title": "Getting started with AI & GitHub",
-      "summary": "We are preparing an introductory workshop on AI fundamentals and working with Git and GitHub. The date, format and programme will be announced once confirmed.",
+      "title": "Workshops in preparation",
+      "summary": "We are preparing workshops on practical tools and techniques, including Git and AI-assisted coding (vibe coding). Further details will be shared once confirmed.",
       "status": "planning",
       "relationship": "club-organized",
       "date": null,
       "location": null,
       "url": null,
-      "copyApproved": false
+      "copyApproved": true
     }
   ],
   "people": [
     { "name": "Shaokang Li", "role": "Person in Charge (PIC)", "url": null, "photo": null, "approvedForPublicUse": true },
-    { "name": "Zongmin Zhang", "role": "Vice President", "url": null, "photo": null, "approvedForPublicUse": true },
+    { "name": "Zongmin Zhang", "role": "Vice President", "url": "https://nagatobigseven.github.io/", "photo": null, "approvedForPublicUse": true },
     { "name": "Lixue Cheng", "role": "Faculty Adviser", "url": null, "photo": null, "approvedForPublicUse": true }
   ],
   "release": {
-    "copyApproved": false,
+    "copyApproved": true,
     "languageConfirmed": true,
     "launchApproved": false
   }
