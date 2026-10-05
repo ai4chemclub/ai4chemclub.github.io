@@ -2,7 +2,7 @@
 
 **这是项目进度的唯一主清单。每次开始先读这里，每次完成后更新这里。**
 
-更新：2026-09-24 · 当前阶段：**网站已在 https://ai4chemclub.github.io/ 上线。公开仓库、自动检查、Pages 发布及桌面/手机线上验收均已完成。NagatoBigSeven 的 Owner 邀请仍待接受；后续重点为维护交接与真实内容更新。**
+更新：2026-10-05 · 当前阶段：**网站已上线，程立雪个人主页链接已补充并完成部署及线上验证。其余维护交接与年度续期事项见下方清单；Owner 邀请状态沿用 2026-09-24 的核对记录。**
 
 ## 接下来按这个顺序做
 
@@ -285,3 +285,12 @@
 
 - 按用户要求从 https://ai4chemclub.github.io/ 截取完整桌面页面，并目视核对首页、About、Members、Contact 与页尾均完整。截图保存为 `.local/screenshots/ai4chemclub-live-2026-09-27.png`，供保存或转发，不纳入 Git。
 - 本次只导出截图并记录工作日志；没有修改网站内容或发布设置，没有推送。
+
+### 2026-10-05 · 补充程立雪个人主页
+
+- 用户提供 https://sherrylixuecheng.github.io/ 并说明是程老师个人主页；已核对页面显示 Sherry Lixue Cheng 和 HKUST Department of Chemistry。按此前成员主页补充方式，将链接加入 Faculty Adviser 卡片，复用 Personal website 链接文字。
+- 仅新增该成员主页链接并同步 BRIEF / CONTENT / REVIEW；未复制个人主页中的照片、邮箱、履历或其他信息。保留此前尚未提交的 2026-09-27 截图工作日志。
+- 同步远程后本地与 origin/main 一致；Node 24.19.0 / pnpm 11.19.0 下，pnpm check、pnpm test（8/8）、pnpm check:release、pnpm build 和 git diff --check 通过。
+- 发布提交 d3a4962 已推送，此时尚待实际部署与线上链接验证。用于补写文档的临时 Python 命令曾遇到字符编码错误，未产生文件修改；已改用文本补丁补全记录，不影响通过检查的站点文件。
+- 随后核对 [Check website](https://github.com/ai4chemclub/ai4chemclub.github.io/actions/runs/37286014571) 与 [Publish GitHub Pages](https://github.com/ai4chemclub/ai4chemclub.github.io/actions/runs/37286014545) 均成功，对应发布提交 d3a4962。正式 Members 区已显示程立雪的 Personal website 链接，实际点击到达所提供的 HTTPS 主页。
+- 目视核对 1512px 桌面成员区与 390px 手机成员卡片，新增链接显示正常；手机文档宽度为 390px，无横向溢出。浏览器返回操作曾超时，恢复结果页后完成手机目视检查并重置临时视口。收尾仅同步文档记录，使用 [skip ci] 避免对未变化的站点重复部署。
