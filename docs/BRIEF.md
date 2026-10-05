@@ -17,7 +17,7 @@
 | 视觉反馈与讨论方向 | 用户确认老师和同学对 FLEX / Materia Viva 改编版较满意，明确要求主体别动。当前布局、字体、红蓝金配色与科学图构成作为认可基线 |
 | 当前工作范围 | 当前设计与文案暂时定稿，作为后续基线；接下来完成剩余检查与上线准备 |
 | 学校标识 | 用户于 2026-09-22 确认校名与校徽均可使用；页首采用官方 HKUST 标识与化学系归属文字 |
-| 首批公开成员 | Shaokang Li — Person in Charge (PIC)；Zongmin Zhang — Vice President；Lixue Cheng — Faculty Adviser。用户已确认三位均同意公开这些姓名和职务；张宗民的主页已由用户指定为 https://nagatobigseven.github.io/；其余主页和照片尚未提供 |
+| 首批公开成员 | Shaokang Li — Person in Charge (PIC)；Zongmin Zhang — Vice President；Lixue Cheng — Faculty Adviser。用户已确认三位均同意公开这些姓名和职务；用户指定张宗民主页为 https://nagatobigseven.github.io/，并于 2026-10-05 补充程立雪主页 https://sherrylixuecheng.github.io/；李少康主页和三人的照片尚未提供 |
 | 首版语言 | 英文为主（用户已确认）；中文释义用于内部文案审阅 |
 | 联系入口 | ai4chemclub@ust.hk；用户于 2026-09-23 确认能正常收信，由本人负责查看和回复 |
 | 发布平台 | GitHub Pages；公开仓库 ai4chemclub/ai4chemclub.github.io 已创建，对应 https://ai4chemclub.github.io/ |

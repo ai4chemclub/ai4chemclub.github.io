@@ -13,7 +13,7 @@
 | 英文简介、标语 | AI 根据需求起草并按反馈修改；用户于 2026-09-23 确认当前版本暂时定稿 | 作为当前文案基线，逐段记录见 REVIEW.md |
 | HKUST 化学系支持的 DAG 身份及学校标识 | 注册材料支持身份事实；用户于 2026-09-22 确认校名、校徽均可使用 | `affiliation.approvedForPublicUse: true`；页首官方标识、归属短句、首屏及 About 均已体现 |
 | 注册生效期 | 2026-09-01 至 2027-08-31 | 留在计划供维护；不自动当作成立日宣传 |
-| 首批 Members | 用户确认三位均同意公开下列姓名与职务 | Shaokang Li — Person in Charge (PIC)；Zongmin Zhang — Vice President；Lixue Cheng — Faculty Adviser。张宗民主页已由用户于 2026-09-23 指定加入；其余主页及照片为空 |
+| 首批 Members | 用户确认三位均同意公开下列姓名与职务 | Shaokang Li — Person in Charge (PIC)；Zongmin Zhang — Vice President；Lixue Cheng — Faculty Adviser。张宗民主页由用户于 2026-09-23 指定加入；程立雪主页由用户于 2026-10-05 指定为 https://sherrylixuecheng.github.io/，已核对页面姓名与 HKUST 化学系归属；李少康主页及三人的照片为空 |
 | 学校社团邮箱 | 注册往来确认激活；2026-09-23 用户确认能正常收信，由本人负责查看和回复 | 使用 ai4chemclub@ust.hk；收件安排已确认，页面不增加个人联系方式 |
 | 筹备中的 workshops | 用户要求不保留具体名称，改为 Git 培训、vibe coding 等技术培训方向；现有英文随整页暂时定稿 | 使用栏目描述 Workshops in preparation；说明列出 Git 和 AI-assisted coding (vibe coding)，标为 `planning`，日期/地点/链接均为空，`copyApproved: true` |
 | OSI 黑客松 | 聊天中的外部活动线索 | 尚未核实具体活动及组队状态，页面暂不添加 |
@@ -112,7 +112,7 @@
 2. 大学名称与标识已获用户确认，保持官方文件比例及来源记录。
 3. 已按用户要求去掉具体 workshop 名称，改为概括性筹备说明；最终英文随整页暂时定稿，活动安排仍未确定。
 4. 社团邮箱能正常收信、由 PIC 查看和回复已确认；后续维护时保持这一安排有效。
-5. 首批三人姓名与角色已确认，张宗民主页已加入；可选补充其他获同意公开的主页与照片。
+5. 首批三人姓名与角色已确认，张宗民与程立雪的主页已由用户指定加入；可选补充其他获同意公开的主页与照片。
 
 网站正式身份和联系渠道优先；OSI、完整成员名单、额外活动不必阻塞首版。
 

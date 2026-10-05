@@ -32,7 +32,7 @@
   "people": [
     { "name": "Shaokang Li", "role": "Person in Charge (PIC)", "url": null, "photo": null, "approvedForPublicUse": true },
     { "name": "Zongmin Zhang", "role": "Vice President", "url": "https://nagatobigseven.github.io/", "photo": null, "approvedForPublicUse": true },
-    { "name": "Lixue Cheng", "role": "Faculty Adviser", "url": null, "photo": null, "approvedForPublicUse": true }
+    { "name": "Lixue Cheng", "role": "Faculty Adviser", "url": "https://sherrylixuecheng.github.io/", "photo": null, "approvedForPublicUse": true }
   ],
   "release": {
     "copyApproved": true,

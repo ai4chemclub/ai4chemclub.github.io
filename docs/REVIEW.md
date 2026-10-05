@@ -69,7 +69,7 @@ A community of students learning together, with support and guidance from our fa
 - Zongmin Zhang — Vice President — [Personal website](https://nagatobigseven.github.io/)
 - Lixue Cheng — Faculty Adviser
 
-张宗民的主页已由用户指定加入；其余两位的主页和三人的照片尚未提供，可在首版之后补充。
+张宗民的主页 https://nagatobigseven.github.io/ 和程立雪的主页 https://sherrylixuecheng.github.io/ 已由用户指定加入，链接文字均为 Personal website。李少康的主页和三人的照片尚未提供，可后续补充。
 
 ## Contact
 
