@@ -2,13 +2,15 @@
 
 **这是项目进度的唯一主清单。每次开始先读这里，每次完成后更新这里。**
 
-更新：2026-10-05 · 当前阶段：**网站已上线，程立雪个人主页链接已补充并完成部署及线上验证。其余维护交接与年度续期事项见下方清单；Owner 邀请状态沿用 2026-09-24 的核对记录。**
+更新：2026-10-10 · 当前阶段：**网站已上线；新增动效与分子旋转已获用户同意推送评审，须经 NagatoBigSeven 审阅通过后再合入 main；[PR #1](https://github.com/ai4chemclub/ai4chemclub.github.io/pull/1) 已创建并请求审阅，尚未合并或发布。社团 logo 三款方向稿待选择后精修；维护交接与年度续期事项见下方清单。**
 
 ## 接下来按这个顺序做
 
-1. 等待 NagatoBigSeven 接受已发送的 Owner 邀请，核对 active Owner 身份；按 OPERATIONS 的“新维护者从这里开始”完成接手。
-2. 有新的、已确认可公开的活动或成员资料时，完成一次内容更新→检查→发布→线上复查的实际演练。不为演练虚构活动或改动已认可文案。
-3. 由负责人安排 DAG / 学校邮箱年度续期（本期至 2027-08-31）。可选成员照片、主页与 OSI 信息按真实进展补充；没有创建自动提醒。
+1. 等待 NagatoBigSeven 审阅[动效 PR #1](https://github.com/ai4chemclub/ai4chemclub.github.io/pull/1)（P1-05，分支 `codex/site-motion-review`）。处理反馈、确认审阅通过及 CI 通过后，再合入 main、检查 Pages 部署和线上效果；当前未启用自动合并。
+2. 审阅三款 logo 方向稿（P5-01），选定方向后精修字形、线条和比例，整理矢量与小尺寸版本；当前图稿未用于官网。
+3. NagatoBigSeven 的 active Owner 身份已核对；按 OPERATIONS 的“新维护者从这里开始”完成实际接手。
+4. 有新的、已确认可公开的活动或成员资料时，完成一次内容更新→检查→发布→线上复查的实际演练。不为演练虚构活动或改动已认可文案。
+5. 由负责人安排 DAG / 学校邮箱年度续期（本期至 2027-08-31）。可选成员照片、主页与 OSI 信息按真实进展补充；没有创建自动提醒。
 
 ## 进度与完成条件
 
@@ -27,6 +29,7 @@
 | P1-02 | 确认首版语言及简介 | 完成 | 2026-09-23 用户确认当前版本暂时定稿；整页英文与中文核对要点保存在 REVIEW.md |
 | P1-03 | 完善响应式首页 | 完成 | 桌面/手机、键盘导航、200% 原生 Chrome 缩放与减少动态媒体偏好模拟通过；不是完整屏幕阅读器或跨浏览器无障碍审计，具体范围见日志 |
 | P1-04 | 主体认可后的资产与图标打磨 | 完成 | 5 个 Lucide 图标、三节点 favicon、一次性连线动效已实现；来源通知、桌面/手机与放大字号检查已核对，等待可选细节反馈 |
+| P1-05 | 主体认可后的交互动效扩展 | 等待外部步骤 | 2026-10-10 本地分子旋转、构建、11 项测试、桌面/窄屏、键盘暂停/恢复、离屏停转、静态回退及减少动态偏好检查完成；PR #1 已请求 NagatoBigSeven 审阅，须通过审阅后再合并发布 |
 | P2-01 | 确认学校名称/标志使用 | 完成 | 用户确认校名、校徽均可使用；官方标识源文件及来源已保存 |
 | P2-02 | 整理 Members 最少公开资料 | 完成 | 首批三人姓名和职务及本人公开同意已确认；用户已指定张宗民与程立雪主页，其他主页/照片可选补充，照片继续用缩写占位 |
 | P2-03 | 确认 workshop 筹备介绍 | 完成 | 概括介绍 Git 和 vibe coding 等技术培训，随当前版本暂时定稿；保留 planning，不添加具体活动名称或日程 |
@@ -35,17 +38,21 @@
 | P3-01 | 定稿与发布前本地验收 | 完成 | 整页文案暂时定稿；本地显示与键盘/缩放/动效检查、静态产物、资源/锚点、文件范围与历史元数据核对完成；公开授权和实际发布检查归入 P3-02 |
 | P3-02 | 推送并启用 GitHub Pages | 完成 | 发布提交 3bdccf9 已推送；Check website 与 Publish GitHub Pages 均成功，站点实际可访问 |
 | P3-03 | 线上验收 | 完成 | HTTPS 返回 200；HTML 与 6 个去重资源和本地产物一致；1512px 桌面、390px 手机、Members / 返回顶部和邮箱目标通过，范围见日志 |
-| P4-01 | 维护者与交接 | 等待外部步骤 | 已向 NagatoBigSeven 发送 Owner 邀请，页面与 API 确认待接受；接受后核对 active Owner 状态并完成维护交接 |
+| P4-01 | 维护者与交接 | 进行中 | 2026-10-05 API 确认 NagatoBigSeven 已是 active Owner，具有网站仓库 Admin 权限；实际维护交接仍待完成 |
 | P4-02 | 更新演练 | 待做 | 完成一次活动内容修改→检查→发布，并记录维护方法 |
 | P4-03 | 年度续期管理 | 待做 | 负责人将 DAG / 学校邮箱续期纳入社团管理；本期至 2027-08-31 |
+| P5-01 | 社团 logo 方向与审阅 | 进行中 | 三款图像方向稿与白底对照长图已生成并目视检查；等待用户、老师与师兄反馈，不视为正式标识 |
+| P5-02 | Logo 精修与交付 | 待做 | 选定方向后统一几何、字形和颜色，整理可编辑矢量、透明 PNG、单色与反白版，并检查真实 16 / 32 / 64px 效果 |
+| P5-03 | Logo 网站应用 | 待做 | 定稿后按用户确认的应用范围接入，保留独立 HKUST 官方标识，检查桌面/手机与构建；按实际发布结果记录完成情况 |
 
 ## GitHub 安排
 
 - 2026-09-24 用户明确授权现在创建组织，覆盖之前的延后安排；指定社团 Gmail 为组织联系邮箱，并确认邀请 nagatobigseven 为 Owner。
 - 用户随后自行完成网页上的创建步骤；[ai4chemclub](https://github.com/ai4chemclub) 已建立，API 核对 GitHub Free、tigerdyger 的 active admin（Owner）身份及指定联系邮箱一致。
-- 用户完成 Confirm access 后，已向 NagatoBigSeven（Zongmin Zhang）发送 Owner 邀请；页面显示发送成功，API 返回 role: admin、state: pending。当前等待对方接受，不能视为已加入组织。
+- 用户完成 Confirm access 后，已向 NagatoBigSeven（Zongmin Zhang）发送 Owner 邀请。2026-10-05 API 复核确认对方已接受，tigerdyger 与 NagatoBigSeven 的组织角色均为 admin（Owner）、状态 active，待处理邀请为空。
 - 用户随后同意继续网站仓库与首次上线；已创建公开仓库 [ai4chemclub/ai4chemclub.github.io](https://github.com/ai4chemclub/ai4chemclub.github.io)，本地 origin 已配置并推送。Pages 已部署，正式网址为 https://ai4chemclub.github.io/，构建来源为 workflow，HTTPS 已启用。
 - 网站已直接归属社团组织；本地 main 跟踪 origin/main，无需进行个人仓库转移。
+- 2026-10-05 权限复核：两位 Owner 均具有网站仓库 Admin 权限；组织默认仓库权限为 Read，仓库没有关联团队。main 尚未启用分支保护，适用 rulesets 为空，没有强制 PR 审阅；Pages 环境仅允许 main 部署，没有人工审批规则。自动发布仍须通过工作流内的测试、check:release 和构建。此次只核对并记录，没有调整权限或发布设置。
 
 ## 首次发布验收清单
 
@@ -294,3 +301,41 @@
 - 发布提交 d3a4962 已推送，此时尚待实际部署与线上链接验证。用于补写文档的临时 Python 命令曾遇到字符编码错误，未产生文件修改；已改用文本补丁补全记录，不影响通过检查的站点文件。
 - 随后核对 [Check website](https://github.com/ai4chemclub/ai4chemclub.github.io/actions/runs/37286014571) 与 [Publish GitHub Pages](https://github.com/ai4chemclub/ai4chemclub.github.io/actions/runs/37286014545) 均成功，对应发布提交 d3a4962。正式 Members 区已显示程立雪的 Personal website 链接，实际点击到达所提供的 HTTPS 主页。
 - 目视核对 1512px 桌面成员区与 390px 手机成员卡片，新增链接显示正常；手机文档宽度为 390px，无横向溢出。浏览器返回操作曾超时，恢复结果页后完成手机目视检查并重置临时视口。收尾仅同步文档记录，使用 [skip ci] 避免对未变化的站点重复部署。
+
+### 2026-10-05 · 核对组织与仓库权限
+
+- 按用户关于仓库归属和修改权限的提问，使用 GitHub API 只读核对组织成员、待处理邀请、仓库协作者、团队、主分支保护、规则集、Pages 环境和当前发布工作流。
+- tigerdyger 与 NagatoBigSeven 均为 active Owner，仓库协作者列表中的角色均为 Admin；组织当前成员为这两人，待处理邀请与仓库团队列表均为空。网站 Members 名录不授予 GitHub 权限。
+- 仓库为 public，组织默认仓库权限为 Read；main 未受保护，适用规则集为空。目前没有强制 PR 或合并审阅要求。PAGES_ENABLED 为 true，Pages 环境仅允许 main 部署，没有人工审批；工作流在 main 推送时触发，部署依赖测试、发布检查和构建成功。
+- 已纠正计划与维护手册中“等待接受邀请”的旧状态；只修改本地文档，没有调整 GitHub 设置、发送邀请、提交或推送。本次没有站点代码变更，不重复运行站点测试；维护交接和实际更新演练继续保留待办。
+
+### 2026-10-10 · 增加交互动效，完成本地预览
+
+- 用户明确要求在已认可风格上增加动效和交互巧思；使用 frontend-design skill 规划并实现，保留原有布局、字体、色板、主体文案和成员资料。新增 Replay 与 Copy email 两个真实操作，不引入活动事实或新的外部服务。
+- 科学主图增加单次连接过程、节点分层响应和最多 2 度的鼠标视角变化；SVG 仅新增分组，XML 对比确认原图几何、渐变和配色未变。导航增加当前位置和下划线过渡，页内链接平滑定位；方向图标、成员主页箭头、信封及返回顶部图标回应操作。
+- 新增原生 `src/scripts/interactions.ts`，构建内联模块 2,835 字节；没有动画依赖、后端或额外网络请求。JS 不可用时内容与原有链接保持可用，两个增强按钮隐藏。
+- 初次检查使用了随应用升级的 pnpm 11.25.0，随后改用明确固定的 Node 24.19.0 / pnpm 11.19.0，重新运行 pnpm check、pnpm test（8/8）、真实 SITE_URL 下的 pnpm check:release 和 pnpm build，均通过。锁文件和 package.json 未修改。
+- Chrome 桌面 1512px、手机视口 390px 与 320px 均未发现文档横向溢出；主图重播按钮 44px 高，复制按钮 48px 高。实测重播启动/结束、节点 0.2/0.4/0.6 秒延迟、鼠标响应、键盘 Tab/Enter 方向跳转和目标描边、Contact 当前导航状态；浏览器未记录错误或警告。
+- 原页面剪贴板写入成功，已通过本地测试输入框与原生粘贴确认复制内容准确为社团邮箱。隔离测试页模拟 Clipboard API 成功/拒绝两分支，验证被拒绝时显示手工复制提示、没有成功勾号且按钮可再次操作。移除脚本的构建副本验证增强按钮隐藏、原内容与邮箱链接保留；这些测试副本只在 `.local/motion-checks/`。
+- 通过 Chrome DevTools Rendering 实际模拟 prefers-reduced-motion: reduce，确认重播隐藏、主图 transform/animation 为 none、scroll-behavior 为 auto，复制按钮保留；恢复 No emulation 后重播恢复，已关闭 DevTools。这是浏览器偏好模拟，不声称完成手机真机或全浏览器检查。
+- 本地正式产物预览为 `http://127.0.0.1:4323/`；新增样式仍待用户体验。没有提交、推送、部署或联系其他人；保留此前未提交的权限与 logo 记录。
+- 最终桌面与手机全页截图分别保存为 `.local/review/ai4chemclub-motion-desktop-2026-10-10.png` 与 `.local/review/ai4chemclub-motion-mobile-2026-10-10.png`，均已目视核对。浏览器恢复默认视口，保留正式产物预览；独立测试服务器在验证后停止。
+
+
+### 2026-10-10 · 分子旋转试作与检查
+
+- 用户要求先评估分子连续旋转是否合适并查找 GitHub 参考。判断为适合局部、慢速运动；参考 Zdog v1.1.3 的旋转计算和深度排序，保留现有球棍质感、颜色、主布局与公开文案。固定来源及 MIT 通知见 ASSETS。
+- 左侧分子约 32 秒一圈，新增的三维深度是插画设计。右侧网络和背景框保持稳定；用 Pause / Rotate 替代前一轮 Replay，并去掉整体鼠标倾斜。无脚本或减少动态偏好恢复原图；离屏、后台停止安排动画帧，恢复时不追赶停留时间。
+- 增加旋转几何、整圈边界、连接索引、刷新率无关速度与长帧保护测试；Node 24.19.0 / pnpm 11.19.0 下 check、test（11/11）、check:release 与 build 通过。没有新增依赖；package.json 仅扩展测试文件匹配。
+- Chrome 1512px 桌面、390px 手机和 320px 窄屏未见横向溢出；暂停按钮高 44px。点击暂停后两次读取的球体位置一致，键盘 Enter 恢复后位置改变；跳至 Contact 后主图移出视口且位置停止变化。目视检查后修正连杆穿过球体及半键重叠亮点。
+- 原生 DevTools Rendering 模拟 reduce，确认原 SVG 显示、旋转图层隐藏、按钮隐藏、连线动画为 none；恢复 No emulation 后保留手动暂停状态，可继续旋转。临时视口与 DevTools 已恢复。移除脚本的构建副本确认 15 个原始球体和邮箱链接保留、按钮隐藏，副本仅保存于 .local/rotation-checks。
+- 浏览器未记录错误或警告。以上为本机 Chrome 和模拟手机尺寸检查，不是实机性能或全面跨浏览器审计。仍为本地预览，未提交、推送或上线；公开站点不含本轮动效。下一步体验旋转速度和质感后再决定发布。
+
+
+### 2026-10-10 · 推送动效评审 PR
+
+- 用户认可当前效果，授权将动效推送到 GitHub，并明确要求先由师兄审阅再正式通过；logo 继续讨论，本次不上传方向稿或接入新标识。
+- 同步 origin 后确认本地与远程 main 均为 b1002fe，无新增提交或分歧；建立 codex/site-motion-review。API 复核 NagatoBigSeven 具有仓库 Admin 权限，可作为 PR 审阅人。
+- Node 24.19.0 / pnpm 11.19.0 下重新执行 check、test（11/11）、check:release、build，全部通过。视觉和交互验收沿用本日已核对的相同站点代码，详见上一条。
+- 提交 6047297 已推送到评审分支；[PR #1](https://github.com/ai4chemclub/ai4chemclub.github.io/pull/1) 已创建，API 确认状态 OPEN、base 为 main、审阅请求为 NagatoBigSeven、autoMergeRequest 为 null。没有推 main、合并或运行 Pages 发布。
+- GitHub 已启动 pull_request 事件的 Check website；结果以 PR Checks 为准。分支推送后 fetch 比对确认本地与远程提交一致。详细 logo 方向稿及其生成日志仍在本地，未纳入动效提交。

@@ -3,10 +3,24 @@
 ## 当前状态
 
 - 当前设计与文案已暂时定稿，2026-09-24 完成本地验收。同日用户在网页完成创建，[ai4chemclub 组织](https://github.com/ai4chemclub) 已核对存在，方案为 GitHub Free。
-- tigerdyger 已是 active Owner；组织联系邮箱已核对为用户指定的社团 Gmail。成员分别使用个人 GitHub 账号管理组织。已向 NagatoBigSeven 发送 Owner 邀请，页面与 API 均已核对，等待对方接受。对方可登录自己的 GitHub 账号后访问组织主页接受邀请。
+- 2026-10-05 API 复核：tigerdyger 与 NagatoBigSeven 均为 active Owner，且均具有网站仓库 Admin 权限；待处理邀请为空。组织联系邮箱此前已核对为用户指定的社团 Gmail；成员分别使用个人 GitHub 账号管理组织。
 - 公开仓库为 [ai4chemclub/ai4chemclub.github.io](https://github.com/ai4chemclub/ai4chemclub.github.io)，本地 origin 指向该仓库。用户已同意继续首次上线，实际部署进度见 PLAN。
 - 正式网址为 [https://ai4chemclub.github.io/](https://ai4chemclub.github.io/)。2026-09-24 已上线，首次发布提交为 `3bdccf9`；[自动检查](https://github.com/ai4chemclub/ai4chemclub.github.io/actions/runs/36002806068) 与 [Pages 发布](https://github.com/ai4chemclub/ai4chemclub.github.io/actions/runs/36002806067) 均成功，HTTPS、资源及桌面/手机页面已核对。
 - 使用 Node.js 24、pnpm 11.19.0、Astro 7.3.2，依赖锁定于 `pnpm-lock.yaml`。
+
+### 谁能修改网站（2026-10-05 核对）
+
+- 组织 ai4chemclub 持有仓库；两位 Owner 均可修改代码、推送、合并 PR，并管理仓库设置和访问权限。
+- 组织默认仓库权限为 Read。以后加入的普通成员不会自动获得写入权限，需要另行授予仓库 Write 或更高权限；当前仓库没有关联团队。
+- 公开访客可以阅读、克隆、fork，并通过 PR 提议修改；没有写入权限就不能直接修改组织仓库。网站 Members 中展示姓名和职务也不等于 GitHub 成员身份。
+- main 当前未启用分支保护，适用规则集为空，未强制 PR 或人工审阅。Pages 环境仅允许 main 部署，没有人工审批规则；自动发布仍需工作流内的测试、check:release 与构建通过。这些部署检查不等于阻止未审阅代码进入 main。
+- 此处记录实际设置；采用分支和 PR 协作是可选的维护流程，尚未设置为 GitHub 强制规则。
+
+### 本次动效的审阅要求（2026-10-10）
+
+用户已授权推送动效评审分支，明确要求 NagatoBigSeven 审阅通过后再正式合并。使用 PR 提交修改并请求审阅；本次不直接推送 main，也不启用自动合并。PR 的 CI 通过只说明自动检查通过，不能替代师兄审阅。合入 main 后才会触发正式 Pages 更新。
+
+这是本次协作要求；没有据此更改仓库权限、分支保护或部署设置。Logo 仍待讨论，生成图稿保留在本地。
 
 ## 本机运行方法
 
@@ -24,7 +38,7 @@ PATH="$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin:$P
   "$HOME/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback/pnpm" dev
 ```
 
-将末尾 `dev` 换成 `check`、`test`、`build` 或 `preview` 即可执行对应操作。若捆绑路径随应用升级改变，重新查询 Codex workspace dependencies；不要把缓存路径当作跨机器标准。
+将末尾 `dev` 换成 `check`、`test`、`build` 或 `preview` 即可执行对应操作。若捆绑路径随应用升级改变，重新查询 Codex workspace dependencies；不要把缓存路径当作跨机器标准。2026-10-10 捆绑 pnpm 已为 11.25.0，项目仍固定使用 11.19.0；本轮在上述 PATH 下用 `pnpm dlx pnpm@11.19.0 <命令>` 完成正式检查，没有变更项目依赖或锁文件。
 
 本次本地预览运行在 `http://127.0.0.1:4321/`。Astro 7 会将开发服务器留在后台；重新运行 `pnpm dev` 会复用本项目服务。需要停止时，在本项目目录用上述 Node PATH 和 pnpm 路径执行 `exec astro dev stop`。不要停其他项目的服务。
 
@@ -64,6 +78,8 @@ python3 -m http.server 4322 --bind 127.0.0.1 --directory .local/readability-chec
 ## 为什么这样搭建
 
 Astro 只在开发和构建时运行；输出是静态文件，适配 GitHub Pages。内容、页面和样式分别放置，减少后续换人维护的负担。暂无登录、后端、数据库、分析脚本或外部字体。精确版本和锁文件保证依赖安装可重复。
+
+2026-10-10 本地动效版增加 `src/scripts/interactions.ts`，后续分子旋转版的浏览器模块约 5.0 KB，由 Astro 输出为同站点的静态 JS 资源。这是原生浏览器增强，不改变静态部署方式。检查时覆盖分子暂停/恢复、离屏停转、键盘方向链接、导航当前位置、邮箱复制成功/拒绝及减少动态偏好；没有脚本时内容和原有链接也必须可用。实际审阅和部署状态见 PLAN。
 
 ## GitHub 归属与首次配置
 
@@ -121,7 +137,7 @@ Astro 只在开发和构建时运行；输出是静态文件，适配 GitHub Pag
 
 5. 获准的改动合入 `main` 后自动发布。先在 [Actions](https://github.com/ai4chemclub/ai4chemclub.github.io/actions) 确认 Check website 与 Publish GitHub Pages 均成功，再打开网站复查。失败时查看失败步骤日志；不要将失败视为已更新，也不要关闭发布检查来绕过问题。
 
-邀请接受和维护者亲自完成首次内容更新仍待进行；以上是接手方法，不代表已完成交接培训或更新演练。
+NagatoBigSeven 已接受邀请；维护者亲自完成首次内容更新仍待进行。以上是接手方法，不代表已完成交接培训或更新演练。
 
 ### 每次更新
 

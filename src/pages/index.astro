@@ -29,7 +29,7 @@ const focusIcons = ['flask-conical', 'orbit', 'terminal'] as const;
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <a class="university-link" href="https://www.ust.hk/" aria-label="HKUST home">
+      <a class="university-link" href="https://www.ust.hk/" aria-label="HKUST home" title="Visit the HKUST website">
         <img src={`${home}branding/hkust-logo.svg`} width="150" height="48" alt="HKUST — The Hong Kong University of Science and Technology" />
       </a>
       <a class="wordmark" href={home} aria-label={`${club.shortName} home`}>{club.shortName}</a>
@@ -57,7 +57,10 @@ const focusIcons = ['flask-conical', 'orbit', 'terminal'] as const;
         <div class="visual-panel">
           <div class="visual-heading">
             <span>{club.focusAreas[0].title}</span>
-            <span class="visual-colors" aria-hidden="true"><i></i><i></i><i></i></span>
+            <div class="visual-tools">
+              <button class="science-rotation" type="button" aria-label="Pause molecule rotation" hidden><Icon name="orbit" /><span>Pause</span></button>
+              <span class="visual-colors" aria-hidden="true"><i></i><i></i><i></i></span>
+            </div>
           </div>
           <div class="visual-stage">
             <div class="science-art" aria-hidden="true"><Fragment set:html={scienceNetwork} /></div>
@@ -126,7 +129,7 @@ const focusIcons = ['flask-conical', 'orbit', 'terminal'] as const;
               <div class="member-details">
                 <h3>{person.name}</h3>
                 <p class="member-role">{person.role}</p>
-                {person.url && <a class="text-link" href={person.url}>Personal website</a>}
+                {person.url && <a class="text-link personal-link" href={person.url}>Personal website <span class="external-arrow" aria-hidden="true">↗</span></a>}
               </div>
             </article>
           ))}
@@ -138,7 +141,13 @@ const focusIcons = ['flask-conical', 'orbit', 'terminal'] as const;
           <h2 id="contact-title">Contact</h2>
           <p>Have a question about the club or an idea to share? We'd like to hear from you.</p>
         </div>
-        <a class="contact-email" href={`mailto:${club.contactEmail}`}><Icon name="mail" /><span>{club.contactEmail}</span></a>
+        <div class="contact-actions">
+          <div class="contact-buttons">
+            <a class="contact-email" href={`mailto:${club.contactEmail}`}><Icon name="mail" /><span>{club.contactEmail}</span></a>
+            <button class="copy-email" type="button" hidden>Copy email <span class="copy-check" aria-hidden="true">✓</span></button>
+          </div>
+          <p class="copy-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+        </div>
       </section>
     </main>
 
@@ -148,10 +157,14 @@ const focusIcons = ['flask-conical', 'orbit', 'terminal'] as const;
         <details class="design-credits">
           <summary>Design credits</summary>
           <p>Interface styles adapted from <a href="https://github.com/AI4QC/FLEX">FLEX</a> (<a href={`${home}licenses/FLEX-MIT.txt`}>MIT</a>) and <a href="https://github.com/AI4QC/materia-viva">Materia Viva</a> (<a href={`${home}licenses/Materia-Viva-CC-BY-NC-4.0.txt`}>CC BY-NC 4.0</a>). Layout, colours and content adapted for AI4Chem Club.</p>
+          <p>Molecule rotation adapted from <a href="https://github.com/metafizzy/zdog">Zdog</a> (<a href={`${home}licenses/Zdog-MIT.txt`}>MIT</a>).</p>
           <p>Icons from <a href="https://github.com/lucide-icons/lucide">Lucide</a> (<a href={`${home}licenses/Lucide-LICENSE.txt`}>ISC / MIT notices</a>).</p>
         </details>
         <a href="#main"><Icon name="chevron-up" />Back to top</a>
       </div>
     </footer>
+    <script>
+      import '../scripts/interactions';
+    </script>
   </body>
 </html>

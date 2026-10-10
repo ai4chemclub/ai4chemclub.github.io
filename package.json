@@ -11,7 +11,7 @@
     "preview": "astro preview --host 127.0.0.1",
     "check": "node scripts/check-content.mjs",
     "check:release": "node scripts/check-content.mjs --release",
-    "test": "node --test scripts/check-content.test.mjs"
+    "test": "node --test scripts/*.test.mjs"
   },
   "dependencies": { "astro": "7.3.2" }
 }
