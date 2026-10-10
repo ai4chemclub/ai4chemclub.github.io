@@ -49,5 +49,24 @@
 - 所有小图标与现有文字并列，SVG 为 `aria-hidden="true"`、`focusable="false"`；链接用途由文字表达，不增加重复的屏幕阅读器标签。
 - 对照了 [Tabler Icons](https://github.com/tabler/tabler-icons) 的图标方案，最终未引入其文件，以保持同一套线条。
 - 交互动效参考 [lucide-animated](https://github.com/pqoqubbw/icons/tree/072c38b1b04ea738d90a084485ccaad4b890ddca) 中 `icons/mail-check.tsx` 的鼠标进入时触发一次路径变化方式；没有复制它的 React / Motion 代码、教程、演示素材或整套动效。本站自行用 CSS 实现主图连线变化，不声称复用了该项目的动画组件。
-- 主图只增加 `.science-bridge` 样式钩子，原 SVG 几何与颜色未改。一次 1.2 秒虚线位移/透明度变化，结束后恢复静态；仅响应鼠标移入或方向链接的键盘可见焦点，减少动态偏好下没有动画，触屏不依赖悬停。它是交互装饰，不表示计算任务、数据传输或研究模拟。
+- 2026-09-23 版本仅增加 `.science-bridge` 样式钩子，原 SVG 几何与颜色未改。一次 1.2 秒虚线位移/透明度变化，结束后恢复静态；仅响应鼠标移入或方向链接的键盘可见焦点，减少动态偏好下没有动画，触屏不依赖悬停。它是交互装饰，不表示计算任务、数据传输或研究模拟。后续动效扩展见下节。
 - `public/favicon.svg` 为本项目自绘的三节点网络小图标，使用深蓝底、白色连线和主图已有的金色/红色节点。替换此前灰色文字图标，无字体依赖、脚本或外部资源。已检查 16 / 24 / 32 / 64px 深浅底效果；不替换 HKUST 原标识，也不声明为已正式通过的社团 logo。
+
+## 2026-10-10 · 交互动效扩展（本地预览）
+
+- 用户明确要求增加动效与交互巧思，继续保留已认可的风格。依照 frontend-design skill 先确定交互用途，再实现和目视检查；未导入新的第三方样式、动画库、图形或字体。
+- 科学 SVG 只新增两个分组类名，原有路径、节点坐标、尺寸、渐变和颜色经 XML 对比保持一致。首次进入视口或点击 Replay 时，分子和连线短暂强调，网络三层节点按 0.2 / 0.4 / 0.6 秒延迟响应；鼠标视角变化最多 2 度，移出时复位。它们仍是装饰，不是分子计算或神经网络运行结果。
+- 导航增加阅读位置提示、下划线过渡和平滑页内定位；学校标识的链接容器增加金色下划线，官方 SVG 不变。复用原有 Lucide 图标的 CSS 变换；成员主页使用普通文字箭头 `↗`，复制按钮使用装饰性勾号 `✓`，两者均对辅助技术隐藏。复制结果通过 `role="status"` 报告。
+- CSS 动画和过渡只在 `prefers-reduced-motion: no-preference` 下启用。脚本同步监听偏好变化，关闭重播与视角变化；静态内容始终显示，无脚本时隐藏两个增强按钮，邮箱和原有链接仍可用。
+- 核对 [MDN reduced motion](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) 与 [Clipboard.writeText](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText)；剪贴板 API 不可用时隐藏按钮，写入被拒绝时提示手工复制，不显示成功。
+- 未替换当前 favicon、HKUST 标识或任何已认可主体内容；logo 方向稿仍独立保存，尚未接入官网。
+
+
+## 2026-10-10 · 分子连续旋转（本地预览）
+
+- 用户主动提出尝试旋转分子。比较 three.js 的 css3d_molecules 示例、3Dmol 的 spin 接口和 Zdog 后，选择适合现有 SVG 球棍画风的 Zdog 投影方法；没有搬入完整科学查看器或分子数据。
+- 实际改编来源为 [Zdog v1.1.3](https://github.com/metafizzy/zdog/tree/f1457937b4927723fef7ccc0fb59cb4dac2cdf46)：js/vector.js 的 rotateY / rotateProperty 计算移植为 TypeScript；借鉴 js/anchor.js 的按深度排序方法。不是直接嵌入整个库或套用完整网页模板。
+- 上游 package.json 标明 MIT，分发文件头为 Copyright 2020 Metafizzy。许可通知随 public/licenses/Zdog-MIT.txt 构建，页脚 Design credits 提供来源与许可链接。
+- 现有 SVG 增加 data-depth 和 data-bond，分别保存装饰性深度及端点索引；没有改变静态图的二维几何、颜色和材质。脚本克隆球体并重新投影、排序，连杆在球面处截断。新增深度不是实测坐标，图案不代表特定化合物或模拟结果。
+- 约 32 秒一圈，按经过时间推进，最多每秒绘制 30 帧。Pause / Rotate 控制暂停和恢复；离屏或标签页隐藏时取消动画帧，重新出现后继续原角度。减少动态偏好下展示原静态 SVG；无脚本时同样保留原图、隐藏旋转按钮。背景线框、右侧网络及文案不旋转。
+- 此节取代上一轮主图 Replay / 鼠标倾斜的交互方案。原有导航、邮箱复制、方向图标等交互保留；没有添加运行时依赖或第三方资源请求。

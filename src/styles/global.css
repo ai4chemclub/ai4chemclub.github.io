@@ -12,6 +12,8 @@
   *, *::before, *::after { box-sizing: border-box; }
   body, h1, h2, h3, p { margin: 0; }
   img { display: block; max-width: 100%; }
+  button { font: inherit; }
+  [hidden] { display: none !important; }
 }
 
 @layer base {
@@ -53,7 +55,7 @@
   p { overflow-wrap: anywhere; text-wrap: pretty; }
   a { color: var(--navy); text-underline-offset: .25em; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
   a:hover { text-decoration-thickness: 2px; }
-  a:focus-visible, summary:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
   main:focus { outline: none; }
   ::selection { background: var(--gold-soft); color: var(--ink); }
 }
@@ -62,8 +64,10 @@
   .page-shell, .site-header { width: min(1200px, calc(100% - 2 * var(--page-gutter))); margin-inline: auto; }
   .site-header { position: sticky; top: 12px; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 12px; padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow-card); }
   nav { display: flex; flex-wrap: wrap; gap: 4px; margin-left: auto; }
-  nav a { display: inline-flex; align-items: center; min-height: 44px; padding: .5rem .9rem; border-bottom: 2px solid transparent; color: var(--muted); font-size: .875rem; text-decoration: none; }
-  nav a:hover, nav a:focus-visible { color: var(--red-deep); border-bottom-color: var(--red); background: var(--red-soft); }
+  nav a { position: relative; display: inline-flex; align-items: center; min-height: 44px; padding: .5rem .9rem; border-bottom: 2px solid transparent; color: var(--muted); font-size: .875rem; text-decoration: none; }
+  nav a::after { content: ""; position: absolute; bottom: -2px; left: .5rem; right: .5rem; height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; }
+  nav a:is(:hover, :focus-visible, [aria-current="location"]) { color: var(--red-deep); background: var(--red-soft); }
+  nav a:is(:hover, :focus-visible, [aria-current="location"])::after { transform: scaleX(1); }
   .introduction { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); align-items: end; gap: 1.5rem 3.5rem; padding-block: 3rem 2.25rem; }
   .showcase { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); align-items: start; gap: 1.5rem; }
   .showcase-solo { grid-template-columns: minmax(0, 1fr); }
@@ -106,7 +110,9 @@
 @layer components {
   .skip-link { position: absolute; top: 1rem; left: 1rem; z-index: 3; transform: translateY(-200%); padding: .75rem 1rem; background: var(--white); border: 1px solid var(--navy); }
   .skip-link:focus { transform: none; }
-  .university-link { display: flex; align-items: center; flex-shrink: 0; padding: 8px 14px; color: white; background: var(--navy); border-radius: 7px; }
+  .university-link { position: relative; display: flex; align-items: center; flex-shrink: 0; padding: 8px 14px; color: white; background: var(--navy); border-radius: 7px; }
+  .university-link::after { content: ""; position: absolute; height: 2px; bottom: 4px; left: 14px; right: 14px; background: var(--gold); transform: scaleX(0); transform-origin: left; }
+  .university-link:is(:hover, :focus-visible)::after { transform: scaleX(1); }
   .university-link img { width: 130px; height: auto; }
   .wordmark { display: inline-flex; align-items: center; min-height: 44px; font: 650 1rem/1.3 var(--display); color: var(--navy); text-decoration: none; }
   .identity-line { color: var(--red-deep); margin-bottom: .875rem; font-size: .9375rem; font-weight: 550; }
@@ -118,9 +124,14 @@
   .visual-colors i { width: 8px; height: 8px; border-radius: 50%; background: var(--navy); }
   .visual-colors i:nth-child(2) { background: var(--red); }
   .visual-colors i:nth-child(3) { background: var(--gold); }
+  .visual-tools { display: flex; flex-shrink: 0; align-items: center; gap: .75rem; }
+  .science-rotation { display: inline-flex; align-items: center; justify-content: center; gap: .35rem; min-height: 44px; margin-block: -.5rem; padding: .25rem .45rem; background: transparent; border: 1px solid transparent; border-radius: 5px; color: var(--navy); cursor: pointer; font-size: .75rem; }
+  .science-rotation:is(:hover, :focus-visible) { background: var(--blue-soft); }
+  .science-rotation:disabled { cursor: default; }
   .visual-stage { position: relative; padding: 1rem 1.5rem 1.75rem; background: #0c273e; color: white; }
   .visual-stage::before { position: absolute; content: ""; inset: 12px; border: 1px solid #bdd6df20; pointer-events: none; }
   .science-art svg { display: block; width: 100%; height: auto; aspect-ratio: 800 / 420; }
+  .science-computation > circle { transform-box: fill-box; transform-origin: center; }
   .tagline { position: relative; max-width: 26ch; margin: .25rem 1rem 0; font: 500 clamp(1.5rem, 1rem + 1.2vw, 2rem)/1.25 var(--display); letter-spacing: -.025em; }
   .interest-links { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; padding: .5rem 1.25rem; }
   .interest-links a { display: inline-flex; align-items: center; gap: .45rem; min-height: 44px; font-size: .8125rem; color: var(--ink); text-decoration: none; }
@@ -151,6 +162,9 @@
   .focus-item:nth-child(2) h3 { color: var(--red-deep); }
   .focus-item:nth-child(3) h3 { color: #735417; }
   .focus-item p { margin-top: .75rem; color: #545658; font-size: .9375rem; }
+  .focus-item:target { outline: 2px solid var(--navy); outline-offset: 4px; }
+  .focus-item:nth-child(2):target { outline-color: var(--red); }
+  .focus-item:nth-child(3):target { outline-color: #86630c; }
   .learning-note { margin-top: 1.5rem; color: var(--muted); font-size: .875rem; }
   .member-card { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; min-width: 0; padding: 1.5rem; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow-card); }
   .member-portrait { display: grid; place-items: center; width: 56px; height: 56px; flex-shrink: 0; border-radius: 8px; background: var(--blue-soft); overflow: hidden; }
@@ -159,27 +173,78 @@
   .member-details { flex: 1 1 130px; min-width: 0; }
   .member-role { color: var(--muted); font-size: .8125rem; margin-top: .3rem; }
   .member-details .text-link { font-size: .875rem; }
+  .personal-link { gap: .35rem; }
+  .external-arrow { display: inline-block; text-decoration: none; }
+  .member-card:has(.personal-link:is(:hover, :focus-visible)) { border-color: #00336655; }
   .members-pending { margin-top: 1.5rem; color: var(--muted); }
   .text-link { display: inline-flex; align-items: center; min-height: 44px; padding-block: .5rem; }
   .contact-panel p { margin-top: .75rem; max-width: 60ch; color: #fff2f1; font-size: .9375rem; }
   .contact-email { display: inline-flex; align-items: center; gap: .625rem; min-height: 48px; max-width: 100%; padding: .5rem 1rem; color: white; border: 1px solid #ffffff66; border-radius: 7px; font-size: 1rem; }
   .contact-email span { min-width: 0; }
+  .contact-panel > .contact-actions { flex: 0 1 auto; min-width: 0; max-width: 100%; }
+  .contact-buttons { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
+  .copy-email { display: inline-flex; align-items: center; justify-content: center; gap: .375rem; min-height: 48px; padding: .5rem .75rem; border: 1px solid #ffffff66; border-radius: 7px; background: transparent; color: white; font-size: .8125rem; cursor: pointer; }
+  .copy-check { opacity: 0; }
+  .copy-email[data-copied] .copy-check { opacity: 1; }
+  .copy-email:is(:hover, :focus-visible), .contact-email:is(:hover, :focus-visible) { background: #ffffff12; border-color: #ffffffbb; }
+  .contact-panel .copy-feedback { min-height: 1.5em; max-width: 45ch; margin-top: .4rem; font-size: .75rem; }
   .footer-links > a { gap: .4rem; }
   .design-credits { max-width: min(100%, 24rem); }
   .design-credits summary { min-height: 44px; padding-block: .65rem; cursor: pointer; }
   .design-credits p { margin-bottom: .75rem; }
 
-  /* One short response to pointer entry or keyboard focus; static by default. */
+  /* Motion is opt-in to the visitor's system preference. Content stays visible. */
   @media (prefers-reduced-motion: no-preference) {
-    .visual-panel:has(.interest-links a:focus-visible) .science-bridge { animation: science-connect 1.2s ease-out 1; }
+    html { scroll-behavior: smooth; }
+    nav a, .primary-link, .contact-email, .copy-email, .member-card { transition: background-color .2s ease, border-color .2s ease; }
+    nav a::after, .university-link::after { transition: transform .25s ease; }
+    .external-arrow, .member-portrait, .footer-links .icon, .science-molecule, .science-computation { transition: transform .25s ease, filter .3s ease; }
+    .icon { transform-box: fill-box; transform-origin: center; }
+    .personal-link:is(:hover, :focus-visible) .external-arrow { transform: translate(2px, -2px); }
+    .member-card:has(.personal-link:is(:hover, :focus-visible)) .member-portrait { transform: translateY(-2px); }
+    .footer-links > a:is(:hover, :focus-visible) .icon { transform: translateY(-3px); }
+    .contact-email .icon-mail path { transform-origin: 50% 28%; transition: transform .25s ease; }
+    .contact-email:is(:hover, :focus-visible) .icon-mail path { transform: rotateX(50deg); }
+    .copy-email[data-copied] .copy-check { animation: copy-confirm .25s ease-out; }
+    .focus-item:target { animation: destination-ring .8s ease-out; }
+    .visual-panel[data-connecting] .science-molecule { animation: molecule-notice 1.25s ease-in-out; }
+    .visual-panel[data-connecting] .science-bridge,
+    .visual-panel:has(.interest-links a:focus-visible) .science-bridge { animation: science-connect 1.2s ease-out; }
+    .visual-panel[data-connecting] .science-computation > circle { animation: network-notice .7s ease-in-out .2s; }
+    .visual-panel[data-connecting] .science-computation > circle:nth-of-type(n+4) { animation-delay: .4s; }
+    .visual-panel[data-connecting] .science-computation > circle:nth-of-type(n+8) { animation-delay: .6s; }
+    .interest-links a:focus-visible .icon-flask-conical { animation: flask-tilt .5s ease-in-out; }
+    .interest-links a:focus-visible .icon-orbit { animation: orbit-turn .65s ease-in-out; }
+    .interest-links a:focus-visible .icon-terminal path:last-child { animation: terminal-cursor .65s ease-out; }
+    .visual-panel:has(.interest-links a:first-child:focus-visible) .science-molecule,
+    .visual-panel:has(.interest-links a:last-child:focus-visible) .science-computation { filter: brightness(1.25); }
     @media (hover: hover) and (pointer: fine) {
-      .visual-panel:hover .science-bridge { animation: science-connect 1.2s ease-out 1; }
+      .visual-panel:has(.interest-links a:hover) .science-bridge { animation: science-connect 1.2s ease-out; }
+      .interest-links a:hover .icon-flask-conical { animation: flask-tilt .5s ease-in-out; }
+      .interest-links a:hover .icon-orbit { animation: orbit-turn .65s ease-in-out; }
+      .interest-links a:hover .icon-terminal path:last-child { animation: terminal-cursor .65s ease-out; }
+      .visual-panel:has(.interest-links a:first-child:hover) .science-molecule,
+      .visual-panel:has(.interest-links a:last-child:hover) .science-computation { filter: brightness(1.25); }
     }
   }
   @keyframes science-connect {
     0% { stroke-dashoffset: 0; stroke-opacity: .3; }
     45% { stroke-opacity: .85; }
     100% { stroke-dashoffset: -33; stroke-opacity: .3; }
+  }
+  @keyframes molecule-notice { 50% { filter: brightness(1.18); } }
+  @keyframes network-notice { 50% { transform: scale(1.3); filter: brightness(1.5); } }
+  @keyframes flask-tilt { 30% { transform: rotate(-10deg); } 65% { transform: rotate(6deg); } }
+  @keyframes orbit-turn { to { transform: rotate(180deg); } }
+  @keyframes terminal-cursor { 45% { transform: translateX(3px); opacity: .35; } }
+  @keyframes copy-confirm { from { transform: scale(.5); } to { transform: scale(1); } }
+  @keyframes destination-ring { from { outline-offset: 10px; } to { outline-offset: 4px; } }
+
+  @media (max-width: 24rem) {
+    .visual-heading { gap: .5rem; padding-inline: .875rem; }
+    .visual-tools { gap: .375rem; }
+    .visual-colors { display: none; }
+    .contact-email { padding-inline: .65rem; font-size: .9375rem; }
   }
 
   @supports (backdrop-filter: blur(18px)) {

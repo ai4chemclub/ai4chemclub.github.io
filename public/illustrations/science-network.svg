@@ -5,41 +5,44 @@
 <radialGradient id="ivory" cx="30%" cy="25%" r="78%"><stop stop-color="#ffffff"/><stop offset=".6" stop-color="#c9e2e6"/><stop offset="1" stop-color="#608593"/></radialGradient>
 </defs>
 <g stroke="#c2d9df" stroke-opacity=".25" stroke-width="1.2"><path d="M107 111 332 31 503 112 278 194Z M107 111 118 321 286 394 278 194 M118 321 345 246 503 319 286 394 M503 112 503 319 M332 31 345 246"/></g>
+<g class="science-molecule">
 <g stroke="#b1ced8" stroke-opacity=".6" stroke-width="7" stroke-linecap="round">
-<path d="M165 150L258 118"/>
-<path d="M258 118L342 135"/>
-<path d="M342 135L422 168"/>
-<path d="M422 168L375 239"/>
-<path d="M375 239L277 266"/>
-<path d="M277 266L201 241"/>
-<path d="M201 241L165 150"/>
-<path d="M165 150L222 190"/>
-<path d="M222 190L308 191"/>
-<path d="M308 191L375 185"/>
-<path d="M375 185L422 168"/>
-<path d="M308 191L277 266"/>
-<path d="M342 135L288 62"/>
-<path d="M201 241L155 301"/>
-<path d="M277 266L349 323"/>
-<path d="M375 239L446 283"/>
-<path d="M201 241L101 220"/>
-<path d="M222 190L201 241"/>
+<path d="M165 150L258 118" data-bond="3 1"/>
+<path d="M258 118L342 135" data-bond="1 2"/>
+<path d="M342 135L422 168" data-bond="2 4"/>
+<path d="M422 168L375 239" data-bond="4 9"/>
+<path d="M375 239L277 266" data-bond="9 11"/>
+<path d="M277 266L201 241" data-bond="11 10"/>
+<path d="M201 241L165 150" data-bond="10 3"/>
+<path d="M165 150L222 190" data-bond="3 6"/>
+<path d="M222 190L308 191" data-bond="6 7"/>
+<path d="M308 191L375 185" data-bond="7 5"/>
+<path d="M375 185L422 168" data-bond="5 4"/>
+<path d="M308 191L277 266" data-bond="7 11"/>
+<path d="M342 135L288 62" data-bond="2 0"/>
+<path d="M201 241L155 301" data-bond="10 13"/>
+<path d="M277 266L349 323" data-bond="11 14"/>
+<path d="M375 239L446 283" data-bond="9 12"/>
+<path d="M201 241L101 220" data-bond="10 8"/>
+<path d="M222 190L201 241" data-bond="6 10"/>
 </g>
-<circle cx="288" cy="62" r="18" fill="url(#red)"/><ellipse cx="283.3" cy="55.7" rx="5.4" ry="2.7" fill="white" opacity=".18" transform="rotate(-30 288 62)"/>
-<circle cx="258" cy="118" r="21" fill="url(#red)"/><ellipse cx="252.5" cy="110.7" rx="6.3" ry="3.1" fill="white" opacity=".18" transform="rotate(-30 258 118)"/>
-<circle cx="342" cy="135" r="30" fill="url(#ivory)"/><ellipse cx="334.2" cy="124.5" rx="9.0" ry="4.5" fill="white" opacity=".18" transform="rotate(-30 342 135)"/>
-<circle cx="165" cy="150" r="28" fill="url(#gold)"/><ellipse cx="157.7" cy="140.2" rx="8.4" ry="4.2" fill="white" opacity=".18" transform="rotate(-30 165 150)"/>
-<circle cx="422" cy="168" r="24" fill="url(#red)"/><ellipse cx="415.8" cy="159.6" rx="7.2" ry="3.6" fill="white" opacity=".18" transform="rotate(-30 422 168)"/>
-<circle cx="375" cy="185" r="24" fill="url(#ivory)"/><ellipse cx="368.8" cy="176.6" rx="7.2" ry="3.6" fill="white" opacity=".18" transform="rotate(-30 375 185)"/>
-<circle cx="222" cy="190" r="28" fill="url(#gold)"/><ellipse cx="214.7" cy="180.2" rx="8.4" ry="4.2" fill="white" opacity=".18" transform="rotate(-30 222 190)"/>
-<circle cx="308" cy="191" r="26" fill="url(#red)"/><ellipse cx="301.2" cy="181.9" rx="7.8" ry="3.9" fill="white" opacity=".18" transform="rotate(-30 308 191)"/>
-<circle cx="101" cy="220" r="19" fill="url(#red)"/><ellipse cx="96.1" cy="213.3" rx="5.7" ry="2.9" fill="white" opacity=".18" transform="rotate(-30 101 220)"/>
-<circle cx="375" cy="239" r="31" fill="url(#gold)"/><ellipse cx="366.9" cy="228.2" rx="9.3" ry="4.6" fill="white" opacity=".18" transform="rotate(-30 375 239)"/>
-<circle cx="201" cy="241" r="22" fill="url(#red)"/><ellipse cx="195.3" cy="233.3" rx="6.6" ry="3.3" fill="white" opacity=".18" transform="rotate(-30 201 241)"/>
-<circle cx="277" cy="266" r="29" fill="url(#ivory)"/><ellipse cx="269.5" cy="255.8" rx="8.7" ry="4.3" fill="white" opacity=".18" transform="rotate(-30 277 266)"/>
-<circle cx="446" cy="283" r="28" fill="url(#gold)"/><ellipse cx="438.7" cy="273.2" rx="8.4" ry="4.2" fill="white" opacity=".18" transform="rotate(-30 446 283)"/>
-<circle cx="155" cy="301" r="20" fill="url(#ivory)"/><ellipse cx="149.8" cy="294.0" rx="6.0" ry="3.0" fill="white" opacity=".18" transform="rotate(-30 155 301)"/>
-<circle cx="349" cy="323" r="22" fill="url(#red)"/><ellipse cx="343.3" cy="315.3" rx="6.6" ry="3.3" fill="white" opacity=".18" transform="rotate(-30 349 323)"/>
+<circle cx="288" cy="62" r="18" fill="url(#red)" data-depth="15"/><ellipse cx="283.3" cy="55.7" rx="5.4" ry="2.7" fill="white" opacity=".18" transform="rotate(-30 288 62)"/>
+<circle cx="258" cy="118" r="21" fill="url(#red)" data-depth="-80"/><ellipse cx="252.5" cy="110.7" rx="6.3" ry="3.1" fill="white" opacity=".18" transform="rotate(-30 258 118)"/>
+<circle cx="342" cy="135" r="30" fill="url(#ivory)" data-depth="-120"/><ellipse cx="334.2" cy="124.5" rx="9.0" ry="4.5" fill="white" opacity=".18" transform="rotate(-30 342 135)"/>
+<circle cx="165" cy="150" r="28" fill="url(#gold)" data-depth="-85"/><ellipse cx="157.7" cy="140.2" rx="8.4" ry="4.2" fill="white" opacity=".18" transform="rotate(-30 165 150)"/>
+<circle cx="422" cy="168" r="24" fill="url(#red)" data-depth="-15"/><ellipse cx="415.8" cy="159.6" rx="7.2" ry="3.6" fill="white" opacity=".18" transform="rotate(-30 422 168)"/>
+<circle cx="375" cy="185" r="24" fill="url(#ivory)" data-depth="100"/><ellipse cx="368.8" cy="176.6" rx="7.2" ry="3.6" fill="white" opacity=".18" transform="rotate(-30 375 185)"/>
+<circle cx="222" cy="190" r="28" fill="url(#gold)" data-depth="125"/><ellipse cx="214.7" cy="180.2" rx="8.4" ry="4.2" fill="white" opacity=".18" transform="rotate(-30 222 190)"/>
+<circle cx="308" cy="191" r="26" fill="url(#red)" data-depth="155"/><ellipse cx="301.2" cy="181.9" rx="7.8" ry="3.9" fill="white" opacity=".18" transform="rotate(-30 308 191)"/>
+<circle cx="101" cy="220" r="19" fill="url(#red)" data-depth="90"/><ellipse cx="96.1" cy="213.3" rx="5.7" ry="2.9" fill="white" opacity=".18" transform="rotate(-30 101 220)"/>
+<circle cx="375" cy="239" r="31" fill="url(#gold)" data-depth="-80"/><ellipse cx="366.9" cy="228.2" rx="9.3" ry="4.6" fill="white" opacity=".18" transform="rotate(-30 375 239)"/>
+<circle cx="201" cy="241" r="22" fill="url(#red)" data-depth="70"/><ellipse cx="195.3" cy="233.3" rx="6.6" ry="3.3" fill="white" opacity=".18" transform="rotate(-30 201 241)"/>
+<circle cx="277" cy="266" r="29" fill="url(#ivory)" data-depth="45"/><ellipse cx="269.5" cy="255.8" rx="8.7" ry="4.3" fill="white" opacity=".18" transform="rotate(-30 277 266)"/>
+<circle cx="446" cy="283" r="28" fill="url(#gold)" data-depth="-10"/><ellipse cx="438.7" cy="273.2" rx="8.4" ry="4.2" fill="white" opacity=".18" transform="rotate(-30 446 283)"/>
+<circle cx="155" cy="301" r="20" fill="url(#ivory)" data-depth="110"/><ellipse cx="149.8" cy="294.0" rx="6.0" ry="3.0" fill="white" opacity=".18" transform="rotate(-30 155 301)"/>
+<circle cx="349" cy="323" r="22" fill="url(#red)" data-depth="-90"/><ellipse cx="343.3" cy="315.3" rx="6.6" ry="3.3" fill="white" opacity=".18" transform="rotate(-30 349 323)"/>
+</g>
+<g class="science-computation">
 <g stroke="#a7c7d3" stroke-opacity=".3" stroke-width="1.5">
 <path d="M596 96L669 58"/>
 <path d="M596 96L669 142"/>
@@ -76,4 +79,5 @@
 <circle cx="742" cy="104" r="11" fill="url(#gold)"/>
 <circle cx="742" cy="188" r="11" fill="url(#red)"/>
 <circle cx="742" cy="272" r="11" fill="url(#ivory)"/>
+</g>
 </svg>
